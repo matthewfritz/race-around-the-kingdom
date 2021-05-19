@@ -1,0 +1,98 @@
+<html>
+<head>
+
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false">
+</script>
+<script src="jquery-1.7.1.min.js"></script>
+<script src="dataloader.js"></script>
+<script src="aggregator.js"></script>
+
+        
+<title>Race Around the Kingdom</title>
+
+</head>
+<body>
+
+<h2>Race Around the Kingdom</h2>
+<p>By Matt Fritz</p><br />
+
+<p>This game has been changed from its original format. Originally, it was built on October 28, 2010 as a one-day class assignment to demonstrate the Google Maps API while I was at UC Irvine getting my undergraduate degree (Bachelor's of Science in Informatics with a specialty in Human-Computer Interaction). It involved taking latitude/longitude data from a data source and placing it on a map, so I figured I could turn it into a game by using venues from <a href="http://www.foursquare.com" target="_blank">Foursquare</a>. People in the class really seemed to enjoy it and it was voted second place out of eight projects in the class competition.</p>
+
+<p>On December 27, 2011 I had already completed my first semester of grad school (Master's of Science in Software Engineering). I decided I wanted to improve the general functionality of the game by making it totally dependent on the client browser instead of the original method of using server communication for getting questions and checking answers. Over the course of a week I added some other fun things to it too. It now has almost twice the amount of locations to visit and picks location/question combinations randomly.</p>
+
+<p>If you would like to play the game, click the <span style="font-weight:bold">Start Game</span> button above the map and the instructions will automatically be displayed next to the map. You can also click the <span style="font-weight:bold">Show/Hide Rules</span> button to read the game instructions beforehand. Some of the questions are not G-rated and a few are even probably PG-13 (it was, after all, originally a college class assignment). You may also use the map as a regular Google Maps interface to explore the Disneyland Resort from an aerial view on your own.</p>
+
+<p>Download the source if you're inclined: <a href="ratk_src.zip">ratk_src.zip</a> (58 KB)</p>
+
+<p>Enjoy!</p>
+
+<hr />
+
+<div id="container">
+
+<div id="dataDisplay" style="float:left;text-align:center;">
+
+</div>
+
+<div id="gameRules" style="float:left;width:400px;display:none">
+     <div style="text-align:center">
+          <h2>Game Rules</h2>
+          <h4>A description of the game and its controls</h4>
+     </div>
+
+<span style='font-weight:bold'>Race Around the Kingdom</span> is a relatively straightforward game by Matt Fritz that uses AJAX, JSON, the Google Maps API, jQuery, and other JavaScript to create the product that you are seeing.<br /><br />
+
+The standard UI controls for the map become disabled and disappear after you start the game in order to prevent certain kinds of cheating.  During the game, you'll be experiencing Disneyland through satellite imagery and going to different locations in the Resort as you answer questions.<br /><br />
+
+<u>Gameplay Instructions</u><br /><br />
+
+<ol>
+<li>Click the "Start Game" button to begin the game</li>
+<li>One location will reveal itself each time as a marker on the map</li>
+<li>When you arrive at the location, the marker's image will change to a star to signal your arrival.</li>
+<li>Click the marker to load the next random question</li>
+<li>Choose an answer and press "Submit"</li>
+<li>If your answer was correct, you'll get a point.  If not, your score will be unchanged.</li>
+<li>Click "Go to Next Location" to be taken to the next location and continue to experience the Resort!</li>
+</ol>
+
+You can tell how many questions you have left by looking at the number in the bold font when the bubble appears after you click a marker.  In total, there are 90 locations to see and 51 questions to answer but you will only see 20 random ones per game.<br /><br />
+
+You can press the "Center Map" button if you need to jump back to the current location to answer its question.<br /><br />
+
+You may also exit the game and return to the normal map format by clicking the "Exit Game" button above the map at any time.<br /><br />
+
+Enjoy!
+
+</div>
+
+<div id="mapContainer" style="float:right;width:600px;height:800px;text-align:center">
+
+     <br /><br />
+
+     <form>
+          <span id="timeDisplay" style="display:none"></span>&nbsp;&nbsp;&nbsp;
+          <span id="scoreDisplay" style="display:none"></span>
+
+          <input type="button" id="startGameBtn" value="Start Game" onClick="startGame();" style="display:none;" /> <input type="button" id="gameRulesBtn" value="Show/Hide Rules" onClick="toggleRules();" />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="button" id="showAllBtn" value="Show All Markers" onClick="showAllMarkers();" /> 
+          <input type="button" id="hideAllBtn" value="Hide All Markers" onClick="hideAllMarkers();" />
+          
+          <input type="button" id="centerMapBtn" value="Center Map" onClick="gameCenterMap();" style="display:none;" />
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <input type="button" id="endGameBtn" value="End Game" onClick="endGame();" style="display:none;" />
+     </form>
+
+     <div id="mapDisplay" style="width:600px;height:800px;">
+          Loading the map... please wait.
+     </div>
+
+</div>
+
+</div>
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,541 @@
+<places>
+	<place>
+		<name>Main Street, USA</name>
+		<geolat>33.810516168819454</geolat>
+		<geolong>-117.91895806789398</geolong>
+	</place>
+
+	<place>
+		<name>Carnation Cafe</name>
+		<geolat>33.81099531650656</geolat>
+		<geolong>-117.91911363601685</geolong>
+	</place>
+
+	<place>
+		<name>Blue Ribbon Bakery</name>
+		<geolat>33.8110688598675</geolat>
+		<geolong>-117.91908144950867</geolong>
+	</place>
+
+	<place>
+		<name>Gibson Girl Ice Cream Parlor</name>
+		<geolat>33.8111424031652</geolat>
+		<geolong>-117.91910290718079</geolong>
+	</place>
+
+	<place>
+		<name>Indiana Jones Adventure</name>
+		<geolat>33.81128948957097</geolat>
+		<geolong>-117.92026162147522</geolong>
+	</place>
+
+	<place>
+		<name>Emporium</name>
+		<geolat>33.81059639838666</geolat>
+		<geolong>-117.91911363601685</geolong>
+	</place>
+
+	<place>
+		<name>Candy Palace</name>
+		<geolat>33.81124268937839</geolat>
+		<geolong>-117.91909486055374</geolong>
+	</place>
+
+	<place>
+		<name>Jungle Cruise</name>
+		<geolat>33.81142988999511</geolat>
+		<geolong>-117.92004436254501</geolong>
+	</place>
+
+	<place>
+		<name>Pirates of the Caribbean</name>
+		<geolat>33.811258289445405</geolat>
+		<geolong>-117.92081013321877</geolong>
+	</place>
+
+	<place>
+		<name>Haunted Mansion</name>
+		<geolat>33.811731</geolat>
+		<geolong>-117.922059</geolong>
+	</place>
+
+	<place>
+		<name>Market House</name>
+		<geolat>33.8108950300034</geolat>
+		<geolong>-117.91883200407028</geolong>
+	</place>
+
+	<place>
+		<name>Adventureland</name>
+		<geolat>33.811351889787915</geolat>
+		<geolong>-117.92020797729492</geolong>
+	</place>
+
+	<place>
+		<name>Refreshment Corner</name>
+		<geolat>33.81142320426584</geolat>
+		<geolong>-117.91910290718079</geolong>
+	</place>
+
+	<place>
+		<name>Penny Arcade</name>
+		<geolat>33.8112159463997</geolat>
+		<geolong>-117.91909486055374</geolong>
+	</place>
+
+	<place>
+		<name>Enchanted Tiki Room</name>
+		<geolat>33.811748575817056</geolat>
+		<geolong>-117.91958704590797</geolong>
+	</place>
+
+	<place>
+		<name>Tiki Juice Bar</name>
+		<geolat>33.81185108988502</geolat>
+		<geolong>-117.91969299316406</geolong>
+	</place>
+
+	<place>
+		<name>Star Tours</name>
+		<geolat>33.81202046068473</geolat>
+		<geolong>-117.9179334640503</geolong>
+	</place>
+
+	<place>
+		<name>Buzz Lightyear Astro Blasters</name>
+		<geolat>33.8124</geolat>
+		<geolong>-117.9178</geolong>
+	</place>
+
+	<place>
+		<name>Big Thunder Mountain Railroad</name>
+		<geolat>33.812648912563674</geolat>
+		<geolong>-117.92030319571495</geolong>
+	</place>
+
+	<place>
+		<name>Frontierland</name>
+		<geolat>33.81219874537479</geolat>
+		<geolong>-117.92003095149994</geolong>
+	</place>
+
+	<place>
+		<name>Tarzan's Treehouse</name>
+		<geolat>33.81130286104985</geolat>
+		<geolong>-117.92046278715134</geolong>
+	</place>
+
+	<place>
+		<name>Bengal Barbecue</name>
+		<geolat>33.81153686159219</geolat>
+		<geolong>-117.92029917240143</geolong>
+	</place>
+
+	<place>
+		<name>Blue Bayou Restaurant</name>
+		<geolat>33.8111424031652</geolat>
+		<geolong>-117.92106360197067</geolong>
+	</place>
+
+	<place>
+		<name>River Belle Terrace</name>
+		<geolat>33.811501204408</geolat>
+		<geolong>-117.92056202888489</geolong>
+	</place>
+
+	<place>
+		<name>South Seas Traders</name>
+		<geolat>33.81153017587127</geolat>
+		<geolong>-117.91986465454102</geolong>
+	</place>
+
+	<place>
+		<name>Golden Horseshoe Saloon</name>
+		<geolat>33.81204720341193</geolat>
+		<geolong>-117.92030990123749</geolong>
+	</place>
+
+	<place>
+		<name>Stage Door Cafe</name>
+		<geolat>33.81184217562312</geolat>
+		<geolong>-117.92026162147522</geolong>
+	</place>
+
+	<place>
+		<name>Sleeping Beauty's Castle</name>
+		<geolat>33.812348</geolat>
+		<geolong>-117.918956</geolong>
+	</place>
+
+	<place>
+		<name>The Hub (Partners Statue)</name>
+		<geolat>33.81209846028235</geolat>
+		<geolong>-117.91897147893906</geolong>
+	</place>
+
+	<place>
+		<name>Plaza Inn</name>
+		<geolat>33.81168394731976</geolat>
+		<geolong>-117.9184752702713</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Monorail Tomorrowland Station</name>
+		<geolat>33.81283165302376</geolat>
+		<geolong>-117.91662454605103</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Railroad Tomorrowland Station</name>
+		<geolat>33.812455028965815</geolat>
+		<geolong>-117.91587889194489</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Railroad Toontown Station</name>
+		<geolat>33.81483508685791</geolat>
+		<geolong>-117.91866570711136</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Embroidery</name>
+		<geolat>33.81353269516776</geolat>
+		<geolong>-117.92062938696382</geolong>
+	</place>
+
+	<place>
+		<name>The Disneyland Story (Great Moments w/ Mr. Lincoln)</name>
+		<geolat>33.810291079909774</geolat>
+		<geolong>-117.91851282119751</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Fire Department No. 1</name>
+		<geolat>33.810442624983395</geolat>
+		<geolong>-117.91936039924622</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Kennel Club</name>
+		<geolat>33.80975844141831</geolat>
+		<geolong>-117.91830629110336</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Jail</name>
+		<geolat>33.81028216548533</geolat>
+		<geolong>-117.9194650053978</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Railroad Main Street Station</name>
+		<geolat>33.809987988957225</geolat>
+		<geolong>-117.91895806789398</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Dream Suite</name>
+		<geolat>33.81119366057774</geolat>
+		<geolong>-117.92082756757736</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Railroad New Orleans Station</name>
+		<geolat>33.81138754703431</geolat>
+		<geolong>-117.92192459106445</geolong>
+	</place>
+
+	<place>
+		<name>Hyatt Shuttle Pick-Up</name>
+		<geolat>33.80958525</geolat>
+		<geolong>-117.91885176666666</geolong>
+	</place>
+
+	<place>
+		<name>Ticket Booth</name>
+		<geolat>33.80925180179457</geolat>
+		<geolong>-117.91964534662925</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Resort Central Bakery</name>
+		<geolat>33.816624543701664</geolat>
+		<geolong>-117.9256421327591</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Monorail Downtown Disney Station</name>
+		<geolat>33.80927037227415</geolat>
+		<geolong>-117.92456388473511</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Hotel</name>
+		<geolat>33.80896282042454</geolat>
+		<geolong>-117.92694568634033</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Hotel Adventure Tower</name>
+		<geolat>33.808401201150815</geolat>
+		<geolong>-117.9261839389801</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Hotel Frontier Tower</name>
+		<geolat>33.807717</geolat>
+		<geolong>-117.92671</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Hotel Fantasy Tower</name>
+		<geolat>33.80909653875586</geolat>
+		<geolong>-117.926886677742</geolong>
+	</place>
+
+	<place>
+		<name>Disneyland Hotel Pool</name>
+		<geolat>33.807964383611484</geolat>
+		<geolong>-117.92705297470093</geolong>
+	</place>
+
+	<place>
+		<name>Disney's California Adventure</name>
+		<geolat>33.807536478553494</geolat>
+		<geolong>-117.91960716247559</geolong>
+	</place>
+
+	<place>
+		<name>Soarin' Over California</name>
+		<geolat>33.80824519514277</geolat>
+		<geolong>-117.92000412940979</geolong>
+	</place>
+
+	<place>
+		<name>California Screamin'</name>
+		<geolat>33.80446976301445</geolat>
+		<geolong>-117.92070150375366</geolong>
+	</place>
+
+	<place>
+		<name>Pacific Wharf Cafe</name>
+		<geolat>33.80581592203204</geolat>
+		<geolong>-117.92006313800812</geolong>
+	</place>
+
+	<place>
+		<name>Taste Pilots Grill</name>
+		<geolat>33.80795992627816</geolat>
+		<geolong>-117.91970372200012</geolong>
+	</place>
+
+	<place>
+		<name>Condor Flats</name>
+		<geolat>33.80799558493825</geolat>
+		<geolong>-117.92004704475403</geolong>
+	</place>
+
+	<place>
+		<name>ElecTRONica</name>
+		<geolat>33.80761671091488</geolat>
+		<geolong>-117.91839480400085</geolong>
+	</place>
+
+	<place>
+		<name>Disney's Grand Californian Hotel</name>
+		<geolat>33.807500819702064</geolat>
+		<geolong>-117.92295455932617</geolong>
+	</place>
+
+	<place>
+		<name>World of Color</name>
+		<geolat>33.80582037947706</geolat>
+		<geolong>-117.9214096069336</geolong>
+	</place>
+
+	<place>
+		<name>Grizzly River Run</name>
+		<geolat>33.807438416676305</geolat>
+		<geolong>-117.92087316513062</geolong>
+	</place>
+
+	<place>
+		<name>Grizzly Pass</name>
+		<geolat>33.80708405577416</geolat>
+		<geolong>-117.92039304971695</geolong>
+	</place>
+
+	<place>
+		<name>Wine Country Trattoria</name>
+		<geolat>33.80649345100933</geolat>
+		<geolong>-117.9200792312622</geolong>
+	</place>
+
+	<place>
+		<name>Golden Vine Winery</name>
+		<geolat>33.80646670654613</geolat>
+		<geolong>-117.91975736618042</geolong>
+	</place>
+
+	<place>
+		<name>WDI Blue Sky Cellar</name>
+		<geolat>33.80655696907588</geolat>
+		<geolong>-117.91965410113335</geolong>
+	</place>
+
+	<place>
+		<name>Hollywood Pictures Backlot</name>
+		<geolat>33.80760779621178</geolat>
+		<geolong>-117.91784763336182</geolong>
+	</place>
+
+	<place>
+		<name>Golden State</name>
+		<geolat>33.80708405577416</geolat>
+		<geolong>-117.91984051465988</geolong>
+	</place>
+
+	<place>
+		<name>MuppetVision 3-D</name>
+		<geolat>33.80800004226971</geolat>
+		<geolong>-117.91787981987</geolong>
+	</place>
+
+	<place>
+		<name>Downtown Disney</name>
+		<geolat>33.80917676965434</geolat>
+		<geolong>-117.92439222335815</geolong>
+	</place>
+
+	<place>
+		<name>World of Disney</name>
+		<geolat>33.80856166417663</geolat>
+		<geolong>-117.92110919952393</geolong>
+	</place>
+
+	<place>
+		<name>La Brea Bakery Cafe</name>
+		<geolat>33.80879567221649</geolat>
+		<geolong>-117.92026698589325</geolong>
+	</place>
+
+	<place>
+		<name>Disney Pin Traders</name>
+		<geolat>33.809206856221884</geolat>
+		<geolong>-117.92439356446266</geolong>
+	</place>
+
+	<place>
+		<name>ESPN Zone</name>
+		<geolat>33.8092302568782</geolat>
+		<geolong>-117.92514324188232</geolong>
+	</place>
+
+	<place>
+		<name>Rainforest Cafe</name>
+		<geolat>33.80910545330386</geolat>
+		<geolong>-117.92501449584961</geolong>
+	</place>
+
+	<place>
+		<name>Ralph Brennan's Jazz Kitchen</name>
+		<geolat>33.80899402138719</geolat>
+		<geolong>-117.92365193367004</geolong>
+	</place>
+
+	<place>
+		<name>Tortilla Jo's</name>
+		<geolat>33.80932385943949</geolat>
+		<geolong>-117.92360097169876</geolong>
+	</place>
+
+	<place>
+		<name>Anaheim House of Blues</name>
+		<geolat>33.80930157312467</geolat>
+		<geolong>-117.92340517044067</geolong>
+	</place>
+
+	<place>
+		<name>AMC Theatres - Downtown Disney 12</name>
+		<geolat>33.80857057878035</geolat>
+		<geolong>-117.92503595352173</geolong>
+	</place>
+
+	<place>
+		<name>Catal Restaurant and Uva Bar</name>
+		<geolat>33.808898189822806</geolat>
+		<geolong>-117.92284727096558</geolong>
+	</place>
+
+	<place>
+		<name>Build-a-Bear Workshop</name>
+		<geolat>33.80926145774333</geolat>
+		<geolong>-117.92303770780563</geolong>
+	</place>
+
+	<place>
+		<name>D Street</name>
+		<geolat>33.80891379031734</geolat>
+		<geolong>-117.92277216911316</geolong>
+	</place>
+
+	<place>
+		<name>Disney Vault 28</name>
+		<geolat>33.80889596118048</geolat>
+		<geolong>-117.923104763031</geolong>
+	</place>
+
+	<place>
+		<name>Compass Books and Cafe</name>
+		<geolat>33.8086418955767</geolat>
+		<geolong>-117.92540609836578</geolong>
+	</place>
+
+	<place>
+		<name>Wetzel's Pretzels</name>
+		<geolat>33.80909653875586</geolat>
+		<geolong>-117.92260587215424</geolong>
+	</place>
+
+	<place>
+		<name>Mayan Adventures RC Boats</name>
+		<geolat>33.80932</geolat>
+		<geolong>-117.92523004</geolong>
+	</place>
+
+	<place>
+		<name>Mickey's Sorcerers Hat</name>
+		<geolat>33.80898064954745</geolat>
+		<geolong>-117.92622685432434</geolong>
+	</place>
+
+	<place>
+		<name>The Cupcake Store</name>
+		<geolat>33.80901630778216</geolat>
+		<geolong>-117.9252290725708</geolong>
+	</place>
+
+	<place>
+		<name>Pearl Factory</name>
+		<geolat>33.809132196942244</geolat>
+		<geolong>-117.92409181594849</geolong>
+	</place>
+
+	<place>
+		<name>Alamo Rent-a-Car</name>
+		<geolat>33.8089015</geolat>
+		<geolong>-117.92519303</geolong>
+	</place>
+
+	<place>
+		<name>Pacific Coast Highway Grill</name>
+		<geolat>33.80845642089844</geolat>
+		<geolong>-117.9244613647461</geolong>
+	</place>
+
+	<place>
+		<name>Paradise Pier Hotel</name>
+		<geolat>33.80802198668986</geolat>
+		<geolong>-117.92533783114244</geolong>
+	</place>
+</places>

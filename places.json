@@ -1,0 +1,455 @@
+{
+   "places":
+   [
+      {
+         "name": "Main Street, USA",
+         "geolat": 33.810516168819454,
+         "geolong": -117.91895806789398
+      },
+      {
+         "name": "Carnation Cafe",
+         "geolat": 33.81099531650656,
+         "geolong": -117.91911363601685
+      },
+      {
+         "name": "Blue Ribbon Bakery",
+         "geolat": 33.8110688598675,
+         "geolong": -117.91908144950867
+      },
+      {
+         "name": "Gibson Girl Ice Cream Parlor",
+         "geolat": 33.8111424031652,
+         "geolong": -117.91910290718079
+      },
+      {
+         "name": "Indiana Jones Adventure",
+         "geolat": 33.81128948957097,
+         "geolong": -117.92026162147522
+      },
+      {
+         "name": "Emporium",
+         "geolat": 33.81059639838666,
+         "geolong": -117.91911363601685
+      },
+      {
+         "name": "Candy Palace",
+         "geolat": 33.81124268937839,
+         "geolong": -117.91909486055374
+      },
+      {
+         "name": "Jungle Cruise",
+         "geolat": 33.81142988999511,
+         "geolong": -117.92004436254501
+      },
+      {
+         "name": "Pirates of the Caribbean",
+         "geolat": 33.811258289445405,
+         "geolong": -117.92081013321877
+      },
+      {
+         "name": "Haunted Mansion",
+         "geolat": 33.811731,
+         "geolong": -117.922059
+      },
+      {
+         "name": "Market House",
+         "geolat": 33.8108950300034,
+         "geolong": -117.91883200407028
+      },
+      {
+         "name": "Adventureland",
+         "geolat": 33.811351889787915,
+         "geolong": -117.92020797729492
+      },
+      {
+         "name": "Refreshment Corner",
+         "geolat": 33.81142320426584,
+         "geolong": -117.91910290718079
+      },
+      {
+         "name": "Penny Arcade",
+         "geolat": 33.8112159463997,
+         "geolong": -117.91909486055374
+      },
+      {
+         "name": "Enchanted Tiki Room",
+         "geolat": 33.811748575817056,
+         "geolong": -117.91958704590797
+      },
+      {
+         "name": "Tiki Juice Bar",
+         "geolat": 33.81185108988502,
+         "geolong": -117.91969299316406
+      },
+      {
+         "name": "Star Tours",
+         "geolat": 33.81202046068473,
+         "geolong": -117.9179334640503
+      },
+      {
+         "name": "Buzz Lightyear Astro Blasters",
+         "geolat": 33.8124,
+         "geolong": -117.9178
+      },
+      {
+         "name": "Big Thunder Mountain Railroad",
+         "geolat": 33.812648912563674,
+         "geolong": -117.92030319571495
+      },
+      {
+         "name": "Frontierland",
+         "geolat": 33.81219874537479,
+         "geolong": -117.92003095149994
+      },
+      {
+         "name": "Tarzan's Treehouse",
+         "geolat": 33.81130286104985,
+         "geolong": -117.92046278715134
+      },
+      {
+         "name": "Bengal Barbecue",
+         "geolat": 33.81153686159219,
+         "geolong": -117.92029917240143
+      },
+      {
+         "name": "Blue Bayou Restaurant",
+         "geolat": 33.8111424031652,
+         "geolong": -117.92106360197067
+      },
+      {
+         "name": "River Belle Terrace",
+         "geolat": 33.811501204408,
+         "geolong": -117.92056202888489
+      },
+      {
+         "name": "South Seas Traders",
+         "geolat": 33.81153017587127,
+         "geolong": -117.91986465454102
+      },
+      {
+         "name": "Golden Horseshoe Saloon",
+         "geolat": 33.81204720341193,
+         "geolong": -117.92030990123749
+      },
+      {
+         "name": "Stage Door Cafe",
+         "geolat": 33.81184217562312,
+         "geolong": -117.92026162147522
+      },
+      {
+         "name": "Sleeping Beauty's Castle",
+         "geolat": 33.812348,
+         "geolong": -117.918956
+      },
+      {
+         "name": "The Hub (Partners Statue)",
+         "geolat": 33.81209846028235,
+         "geolong": -117.91897147893906
+      },
+      {
+         "name": "Plaza Inn",
+         "geolat": 33.81168394731976,
+         "geolong": -117.9184752702713
+      },
+      {
+         "name": "Disneyland Monorail Tomorrowland Station",
+         "geolat": 33.81283165302376,
+         "geolong": -117.91662454605103
+      },
+      {
+         "name": "Disneyland Railroad Tomorrowland Station",
+         "geolat": 33.812455028965815,
+         "geolong": -117.91587889194489
+      },
+      {
+         "name": "Disneyland Railroad Toontown Station",
+         "geolat": 33.81483508685791,
+         "geolong": -117.91866570711136
+      },
+      {
+         "name": "Disneyland Embroidery",
+         "geolat": 33.81353269516776,
+         "geolong": -117.92062938696382
+      },
+      {
+         "name": "The Disneyland Story (Great Moments w/ Mr. Lincoln)",
+         "geolat": 33.810291079909774,
+         "geolong": -117.91851282119751
+      },
+      {
+         "name": "Disneyland Fire Department No. 1",
+         "geolat": 33.810442624983395,
+         "geolong": -117.91936039924622
+      },
+      {
+         "name": "Disneyland Kennel Club",
+         "geolat": 33.80975844141831,
+         "geolong": -117.91830629110336
+      },
+      {
+         "name": "Disneyland Jail",
+         "geolat": 33.81028216548533,
+         "geolong": -117.9194650053978
+      },
+      {
+         "name": "Disneyland Railroad Main Street Station",
+         "geolat": 33.809987988957225,
+         "geolong": -117.91895806789398
+      },
+      {
+         "name": "Disneyland Dream Suite",
+         "geolat": 33.81119366057774,
+         "geolong": -117.92082756757736
+      },
+      {
+         "name": "Disneyland Railroad New Orleans Station",
+         "geolat": 33.81138754703431,
+         "geolong": -117.92192459106445
+      },
+      {
+         "name": "Hyatt Shuttle Pick-Up",
+         "geolat": 33.80958525,
+         "geolong": -117.91885176666666
+      },
+      {
+         "name": "Ticket Booth",
+         "geolat": 33.80925180179457,
+         "geolong": -117.91964534662925
+      },
+      {
+         "name": "Disneyland Resort Central Bakery",
+         "geolat": 33.816624543701664,
+         "geolong": -117.9256421327591
+      },
+      {
+         "name": "Disneyland Monorail Downtown Disney Station",
+         "geolat": 33.80927037227415,
+         "geolong": -117.92456388473511
+      },
+      {
+         "name": "Disneyland Hotel",
+         "geolat": 33.80896282042454,
+         "geolong": -117.92694568634033
+      },
+      {
+         "name": "Disneyland Hotel Adventure Tower",
+         "geolat": 33.808401201150815,
+         "geolong": -117.9261839389801
+      },
+      {
+         "name": "Disneyland Hotel Frontier Tower",
+         "geolat": 33.807717,
+         "geolong": -117.92671
+      },
+      {
+         "name": "Disneyland Hotel Fantasy Tower",
+         "geolat": 33.80909653875586,
+         "geolong": -117.926886677742
+      },
+      {
+         "name": "Disneyland Hotel Pool",
+         "geolat": 33.807964383611484,
+         "geolong": -117.92705297470093
+      },
+      {
+         "name": "Disney's California Adventure",
+         "geolat": 33.807536478553494,
+         "geolong": -117.91960716247559
+      },
+      {
+         "name": "Soarin' Over California",
+         "geolat": 33.80824519514277,
+         "geolong": -117.92000412940979
+      },
+      {
+         "name": "California Screamin'",
+         "geolat": 33.80446976301445,
+         "geolong": -117.92070150375366
+      },
+      {
+         "name": "Pacific Wharf Cafe",
+         "geolat": 33.80581592203204,
+         "geolong": -117.92006313800812
+      },
+      {
+         "name": "Taste Pilots Grill",
+         "geolat": 33.80795992627816,
+         "geolong": -117.91970372200012
+      },
+      {
+         "name": "Condor Flats",
+         "geolat": 33.80799558493825,
+         "geolong": -117.92004704475403
+      },
+      {
+         "name": "ElecTRONica",
+         "geolat": 33.80761671091488,
+         "geolong": -117.91839480400085
+      },
+      {
+         "name": "Disney's Grand Californian Hotel",
+         "geolat": 33.807500819702064,
+         "geolong": -117.92295455932617
+      },
+      {
+         "name": "World of Color",
+         "geolat": 33.80582037947706,
+         "geolong": -117.9214096069336
+      },
+      {
+         "name": "Grizzly River Run",
+         "geolat": 33.807438416676305,
+         "geolong": -117.92087316513062
+      },
+      {
+         "name": "Grizzly Pass",
+         "geolat": 33.80708405577416,
+         "geolong": -117.92039304971695
+      },
+      {
+         "name": "Wine Country Trattoria",
+         "geolat": 33.80649345100933,
+         "geolong": -117.9200792312622
+      },
+      {
+         "name": "Golden Vine Winery",
+         "geolat": 33.80646670654613,
+         "geolong": -117.91975736618042
+      },
+      {
+         "name": "WDI Blue Sky Cellar",
+         "geolat": 33.80655696907588,
+         "geolong": -117.91965410113335
+      },
+      {
+         "name": "Hollywood Pictures Backlot",
+         "geolat": 33.80760779621178,
+         "geolong": -117.91784763336182
+      },
+      {
+         "name": "Golden State",
+         "geolat": 33.80708405577416,
+         "geolong": -117.91984051465988
+      },
+      {
+         "name": "MuppetVision 3-D",
+         "geolat": 33.80800004226971,
+         "geolong": -117.91787981987
+      },
+      {
+         "name": "Downtown Disney",
+         "geolat": 33.80917676965434,
+         "geolong": -117.92439222335815
+      },
+      {
+         "name": "World of Disney",
+         "geolat": 33.80856166417663,
+         "geolong": -117.92110919952393
+      },
+      {
+         "name": "La Brea Bakery Cafe",
+         "geolat": 33.80879567221649,
+         "geolong": -117.92026698589325
+      },
+      {
+         "name": "Disney Pin Traders",
+         "geolat": 33.809206856221884,
+         "geolong": -117.92439356446266
+      },
+      {
+         "name": "ESPN Zone",
+         "geolat": 33.8092302568782,
+         "geolong": -117.92514324188232
+      },
+      {
+         "name": "Rainforest Cafe",
+         "geolat": 33.80910545330386,
+         "geolong": -117.92501449584961
+      },
+      {
+         "name": "Ralph Brennan's Jazz Kitchen",
+         "geolat": 33.80899402138719,
+         "geolong": -117.92365193367004
+      },
+      {
+         "name": "Tortilla Jo's",
+         "geolat": 33.80932385943949,
+         "geolong": -117.92360097169876
+      },
+      {
+         "name": "Anaheim House of Blues",
+         "geolat": 33.80930157312467,
+         "geolong": -117.92340517044067
+      },
+      {
+         "name": "AMC Theatres - Downtown Disney 12",
+         "geolat": 33.80857057878035,
+         "geolong": -117.92503595352173
+      },
+      {
+         "name": "Catal Restaurant and Uva Bar",
+         "geolat": 33.808898189822806,
+         "geolong": -117.92284727096558
+      },
+      {
+         "name": "Build-a-Bear Workshop",
+         "geolat": 33.80926145774333,
+         "geolong": -117.92303770780563
+      },
+      {
+         "name": "D Street",
+         "geolat": 33.80891379031734,
+         "geolong": -117.92277216911316
+      },
+      {
+         "name": "Disney Vault 28",
+         "geolat": 33.80889596118048,
+         "geolong": -117.923104763031
+      },
+      {
+         "name": "Compass Books and Cafe",
+         "geolat": 33.8086418955767,
+         "geolong": -117.92540609836578
+      },
+      {
+         "name": "Wetzel's Pretzels",
+         "geolat": 33.80909653875586,
+         "geolong": -117.92260587215424
+      },
+      {
+         "name": "Mayan Adventures RC Boats",
+         "geolat": 33.80932,
+         "geolong": -117.92523004
+      },
+      {
+         "name": "Mickey's Sorcerers Hat",
+         "geolat": 33.80898064954745,
+         "geolong": -117.92622685432434
+      },
+      {
+         "name": "The Cupcake Store",
+         "geolat": 33.80901630778216,
+         "geolong": -117.9252290725708
+      },
+      {
+         "name": "Pearl Factory",
+         "geolat": 33.809132196942244,
+         "geolong": -117.92409181594849
+      },
+      {
+         "name": "Alamo Rent-a-Car",
+         "geolat": 33.8089015,
+         "geolong": -117.92519303
+      },
+      {
+         "name": "Pacific Coast Highway Grill",
+         "geolat": 33.80845642089844,
+         "geolong": -117.9244613647461
+      },
+      {
+         "name": "Paradise Pier Hotel",
+         "geolat": 33.80802198668986,
+         "geolong": -117.92533783114244
+      }
+   ]
+}
