@@ -1,0 +1,515 @@
+{
+   "questions":
+   [
+      {
+         "question": "What year was Disneyland opened?",
+         "answers":
+         [
+                "1955",
+                "1962",
+                "1965",
+                "1975"
+         ]
+      },
+      {
+         "question": "Before it opened, something else occupied the space of California Adventures.  What was it?",
+         "answers":
+         [
+                "Eeyore Parking Area",
+                "Bounty Interactive Paper Towel Experience",
+                "Dirt",
+                "More bathrooms than you have ever seen"
+         ]
+      },
+      {
+         "question": "The story of Big Thunder Mountain is based around what?",
+         "answers":
+         [
+                "Old Mining Town",
+                "Hovel",
+                "Colonial Williamsburg",
+                "What's with this history crap?"
+         ]
+      },
+      {
+         "question": "Walt based Main Street USA on which city?",
+         "answers":
+         [
+                "Marcelene, Missouri",
+                "Buttsville, Pennsylvania",
+                "Death Valley, California",
+                "Current, Confusion"
+         ]
+      },
+      {
+         "question": "When the Imagineers were creating The Indiana Jones Adventure, they had to wait for what?",
+         "answers":
+         [
+                "Technology to catch up",
+                "A conference room",
+                "Michael Eisner to tell them they were wrong",
+                "Harrison Ford to disable the traps in the Temple of the Forbidden Eye"
+         ]
+      },
+      {
+         "question": "In the Matterhorn, the \"Wells Expedition\" crate references what?",
+         "answers":
+         [
+                "Disney executive who died in a helicopter accident",
+                "A second attempt at the Bads Expedition",
+                "It's just a crate",
+                "The Yeti trying to find food"
+         ]
+      },
+      {
+         "question": "In Buzz Lightyear Astro Blasters, the Little Green Men are trying to collect what?",
+         "answers":
+         [
+                "Batteries",
+                "Cheese",
+                "Hot chocolate",
+                "Taxes"
+         ]
+      },
+      {
+         "question": "Near It's a Small World, you can find a bush shaped like what?",
+         "answers":
+         [
+                "Sea serpent",
+                "Michael Eisner",
+                "Mickey Mouse",
+                "Mickey Mouse's son"
+         ]
+      },
+      {
+         "question": "Before Pixar crapped it up, the Finding Nemo Submarine Voyage used to be what?",
+         "answers":
+         [
+                "A decent submarine ride with Captain Nemo",
+                "The Sardine Experience",
+                "Interactive Canned Tuna Experience",
+                "American Mental Health Association's Tribute to Claustrophobia"
+         ]
+      },
+      {
+         "question": "Tomorrowland used to have a classic ride that used a track above the land.  What was it?",
+         "answers":
+         [
+                "Peoplemover",
+                "People Remover",
+                "The Goodyear Publicity Deluxe",
+                "Something else that isn't there any more"
+         ]
+      },
+      {
+         "question": "Mickey's Toontown...",
+         "answers":
+         [
+                "Sucks",
+                "Sucks",
+                "Sucks",
+                "Sucks"
+         ]
+      },
+      {
+         "question": "Star Tours...",
+         "answers":
+         [
+                "Sucks",
+                "Sucks",
+                "Sucks",
+                "Sucks"
+         ]
+      },
+      {
+         "question": "Autopia was sponsored by what company in 2000?",
+         "answers":
+         [
+                "Chevron",
+                "BF Goodrich",
+                "Jack Daniel's",
+                "Texaco"
+         ]
+      },
+      {
+         "question": "Fantasyland includes what classic ride that was a 1955 Original?",
+         "answers":
+         [
+                "Mister Toad's Wild Ride",
+                "Flying Saucers",
+                "Splash Mountain",
+                "The Haunted Mansion"
+         ]
+      },
+      {
+         "question": "Peter Pan's Flight has...",
+         "answers":
+         [
+                "Wait times that are unjustifiably long",
+                "The ability to seat 12 people comfortably",
+                "Poor safety precautions",
+                "Wait, isn't that in Tomorrowland?"
+         ]
+      },
+      {
+         "question": "After a big lunch, Mad Tea Party may make you...",
+         "answers":
+         [
+                "Vomit",
+                "Vomit",
+                "Vomit",
+                "Vomit"
+         ]
+      },
+      {
+         "question": "The Hilton Anaheim...",
+         "answers":
+         [
+                "Is not in Disneyland",
+                "Is not actually in Anaheim",
+                "Is in Fullerton",
+                "Doesn't actually exist"
+         ]
+      },
+      {
+         "question": "In August 2010, OSHA forever ruined which classic attraction in the name of safety?",
+         "answers":
+         [
+                "Alice in Wonderland",
+                "Mad Hatter",
+                "Star Traders",
+                "The OSHA Experience, sponsored by Tacoma Narrows LLC"
+         ]
+      },
+      {
+         "question": "The Disneyland Railroad includes what?",
+         "answers":
+         [
+                "A Grand Canyon diorama",
+                "The Jeffrey Dahmer Cargo Train",
+                "A hovercraft containing multiple eels",
+                "A wicker basket with wheels"
+         ]
+      },
+      {
+         "question": "The Tomorrowland Station of the Disneyland Railroad is...",
+         "answers":
+         [
+                "By Autopia",
+                "By Autopia",
+                "By Autopia",
+                "By Autopia"
+         ]
+      },
+      {
+         "question": "At Mickey's House, you get to...",
+         "answers":
+         [
+                "Meet Mickey",
+                "Destroy cherished childhood memories",
+                "Meet Donald",
+                "Meet Zombie Walt Disney"
+         ]
+      },
+      {
+         "question": "The Disneyland Monorail is...",
+         "answers":
+         [
+                "The first consistently operating monorail of its kind",
+                "Transportation for zombies",
+                "Transportation for raptors",
+                "Transportation for zombie raptors"
+         ]
+      },
+      {
+         "question": "What ride was originally considered too damn scary that it had to be re-designed?",
+         "answers":
+         [
+                "Snow White's Scary Adventures",
+                "Peter Pan's Flight",
+                "Peter Pan's Downward Tail Spin",
+                "Zombies and You: K - 5 Edition"
+         ]
+      },
+      {
+         "question": "What is the name of the skeleton wearing Mickey ears in the Indiana Jones Adventure?",
+         "answers":
+         [
+                "Bones",
+                "Skeletor",
+                "What's Crackin'",
+                "Rattles"
+         ]
+      },
+      {
+         "question": "Who is the main antagonist in the Indiana Jones Adventure?",
+         "answers":
+         [
+                "One really pissed-off deity",
+                "Lucasfilm",
+                "Sallah",
+                "Harrison Ford's wife"
+         ]
+      },
+      {
+         "question": "Pirates of the Caribbean was originally designed as...",
+         "answers":
+         [
+                "A walk-through attraction",
+                "A bordello",
+                "A White Lightning distillery",
+                "An affront to French people everywhere"
+         ]
+      },
+      {
+         "question": "True or false: Pirates of the Caribbean was crapped-up with movie references.",
+         "answers":
+         [
+                "True",
+                "True",
+                "True",
+                "True"
+         ]
+      },
+      {
+         "question": "The length of the first waterfall on Pirates of the Caribbean is similar to...",
+         "answers":
+         [
+                "The final waterfall on Splash Mountain",
+                "The first waterfall in Autopia",
+                "Star Tours",
+                "Anti-climactic general ride"
+         ]
+      },
+      {
+         "question": "The \"Ghost Host\" in the Haunted Mansion is voiced by...",
+         "answers":
+         [
+                "Paul Frees",
+                "Thurl Ravenscroft",
+                "Tony the Tiger",
+                "Who cares? It's grrrrrreat!"
+         ]
+      },
+      {
+         "question": "The original groom in the Haunted Mansion was supposed to be...",
+         "answers":
+         [
+                "The Hatbox Ghost",
+                "Madame Leota",
+                "Mister Sparkles",
+                "Q-Bert"
+         ]
+      },
+      {
+         "question": "Each year, the Haunted Mansion transforms into...",
+         "answers":
+         [
+                "Haunted Mansion Holiday",
+                "The \"Finding Nemo: Help, I Can't Breathe!\" Ground-Level Spectacular",
+                "Star Mountain Deluxe",
+                "A burger joint named Five Dead Guys"
+         ]
+      },
+      {
+         "question": "The Tiki Juice Bar is known for the...",
+         "answers":
+         [
+                "Dole Whip",
+                "Dole Fuck",
+                "Dill Whip",
+                "Slausson"
+         ]
+      },
+      {
+         "question": "At the Hub, you can find...",
+         "answers":
+         [
+                "Walt hand-in-hand with Mickey",
+                "Walt groping Mickey",
+                "Mickey getting a little too friendly with Walt",
+                "Minnie fucking Mickey"
+         ]
+      },
+      {
+         "question": "At the Matterhorn, you can find...",
+         "answers":
+         [
+                "The Yeti",
+                "The frozen corpse of Walt Disney with a surprised expression on his face",
+                "A polar bear",
+                "A Tomorrowland Skyway bucket in a block of ice"
+         ]
+      },
+      {
+         "question": "In Soarin' Over California, you soar over...",
+         "answers":
+         [
+                "California",
+                "Sri Lanka",
+                "Japan",
+                "New Zealand"
+         ]
+      },
+      {
+         "question": "On California Screamin', the loop is in the shape of...",
+         "answers":
+         [
+                "Mickey's head",
+                "Donald's foot",
+                "Goofy's ass",
+                "Minnie's... well, you know."
+         ]
+      },
+      {
+         "question": "At the Taste Pilots Grill, you can find...",
+         "answers":
+         [
+                "Good food and beer on tap",
+                "A real taste pilot",
+                "Nothing but salad",
+                "Anchovies"
+         ]
+      },
+      {
+         "question": "The Grand Californian hotel is built in what style?",
+         "answers":
+         [
+                "Art-Deco",
+                "Total-Crap",
+                "Herp-Derp",
+                "Fart-Deco"
+         ]
+      },
+      {
+         "question": "On Grizzly River Run, you may become...",
+         "answers":
+         [
+                "Soaked",
+                "Soaked",
+                "Soaked",
+                "Soaked"
+         ]
+      },
+      {
+         "question": "To purchase wine at the Wine Country Trattoria, you must be...",
+         "answers":
+         [
+                "At least 21",
+                "Over 60",
+                "Under 18",
+                "Dead"
+         ]
+      },
+      {
+         "question": "The WDI Blue Sky Cellar contains...",
+         "answers":
+         [
+                "Current and future Imagineering project previews",
+                "Absolutely nothing",
+                "Lots of actual wine",
+                "Gypsies"
+         ]
+      },
+      {
+         "question": "What can you find at MuppetVision 3-D?",
+         "answers":
+         [
+                "Muppets",
+                "Zombie Jim Henson",
+                "Who Wants to Be a Millionaire?",
+                "A secret IRS office"
+         ]
+      },
+      {
+         "question": "What does the Pearl Factory offer?",
+         "answers":
+         [
+                "Pearls",
+                "Mussels",
+                "Clams",
+                "Vigilante justice"
+         ]
+      },
+      {
+         "question": "What can you do at Alamo Rent-a-Car?",
+         "answers":
+         [
+                "Rent a car, dumbass",
+                "Rent a hot-air balloon",
+                "Purchase and eat chili dogs",
+                "Purchase raw vegetables"
+         ]
+      },
+      {
+         "question": "The Uva Bar offers...",
+         "answers":
+         [
+                "Watered-down drinks that are too fucking expensive",
+                "Complementary hotel room mini-bar service",
+                "A box of farts",
+                "Fried licorice"
+         ]
+      },
+      {
+         "question": "La Brea Bakery Cafe has...",
+         "answers":
+         [
+                "Bread and lots of it!",
+                "A big strawberry fountain inside the cafe",
+                "Liver and onions",
+                "Twice-baked chicken parmigiana"
+         ]
+      },
+      {
+         "question": "World of Disney is...",
+         "answers":
+         [
+                "A big-ass Disney store in Downtown Disney",
+                "A small advertisement for Disney Travel",
+                "A Lycan in disguise",
+                "Made entirely of chocolate"
+         ]
+      },
+      {
+         "question": "Stage Door Cafe is...",
+         "answers":
+         [
+                "Too small for the food it offers",
+                "In Tomorrowland",
+                "In Fantasyland",
+                "In New Orleans Square"
+         ]
+      },
+      {
+         "question": "In Sleeping Beauty's Castle...",
+         "answers":
+         [
+                "There is a draw-bridge that allows you into Fantasyland",
+                "Sleeping Beauty is busy sleeping and not getting her lazy ass ready",
+                "Prince Charming is having a stiff drink",
+                "Tomorrowland gets lonely"
+         ]
+      },
+      {
+         "question": "River Belle Terrace is...",
+         "answers":
+         [
+                "Near the Rivers of America in New Orleans Square",
+                "Shaped like Tucson",
+                "A shop with no food choices",
+                "A drinkwich location"
+         ]
+      },
+      {
+         "question": "At Refreshment Corner, you can be...",
+         "answers":
+         [
+                "Refreshed with a cold Coke",
+                "Fascinated by the A-V Guy Procession",
+                "Sodomized with a hot-dog",
+                "A giant cheesecake"
+         ]
+      }
+   ]
+}

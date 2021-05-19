@@ -9,10 +9,16 @@ In order to view the project in your browser, please open the `index.html` file 
 ## Table of Contents
 
 * [File List](#file-list)
+   * [Application Files](#application-files)
+   * [Development / Deployment Files](#development-deployment-files)
 * [Data Notes](#data-notes)
 * [Change Log](#change-log)
 
 ## File List
+
+### Application Files
+
+These files are **required** for the application to run.
 
 `aggregator.js` - Performs map-plotting and game-running tasks
 
@@ -27,6 +33,12 @@ In order to view the project in your browser, please open the `index.html` file 
 `places.json` - The data file containing map locations (in JSON format)
 
 `questions.json` - The data file containing questions (in JSON format)
+
+### Development / Deployment Files
+
+These files are only used during the development and deployment workflows. End-users will not need to worry about these.
+
+`gh-deploy.sh` - Shell script to package the [Application Files](#application-files) for deployment to GitHub Pages.
 
 ## Data Notes
 
