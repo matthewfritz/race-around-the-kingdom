@@ -1,6 +1,6 @@
 # Race Around the Kingdom
 
-Race Around the Kingdom is a game by Matthew Fritz that takes players around the Disneyland Resort by utilizing satellite imagery. Throughout the adventure the player will answer questions based on resort locations and will earn a point if he is correct.
+*Race Around the Kingdom* is a game by Matthew Fritz that takes players around the Disneyland Resort by utilizing satellite imagery. Throughout the adventure the player will answer questions based on resort locations and will earn a point if he is correct.
 
 The initial version was released on October 28, 2010.
 
