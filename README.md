@@ -40,7 +40,7 @@ These files are **required** for the application to run.
 
 These files are only used during the development and deployment workflows. End-users will not need to worry about these.
 
-`gh-pages/` - Deployment directory for project hosting on GitHub Pages.
+`docs/` - Deployment directory for project hosting on GitHub Pages.
 
 `gh-deploy.sh` - Shell script to package the [Application Files](#application-files) for deployment to GitHub Pages.
 

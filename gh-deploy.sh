@@ -7,8 +7,8 @@ E_NO_DEPLOY_DIR=81
 E_NO_FILES=82
 
 # Deployment directory
-# The default directory is "gh-pages" in a project to be hosted on GitHub Pages
-DEPLOY_DIR="gh-pages"
+# The default directory is "docs" in a project to be hosted on GitHub Pages
+DEPLOY_DIR="docs"
 
 # Array of files to copy directly to the deployment directory
 declare -a APPLICATION_FILES=(
