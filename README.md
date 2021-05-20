@@ -40,7 +40,7 @@ These files are only used during the development and deployment workflows. End-u
 
 `docs/` - Deployment directory for project hosting on GitHub Pages.
 
-`gh-deploy.sh` - Shell script to package the [Application Files](#application-files) for deployment to GitHub Pages.
+`deploy-ghp.sh` - Shell script to package the [Application Files](#application-files) for deployment to GitHub Pages.
 
 ## Data Notes
 

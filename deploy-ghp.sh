@@ -10,7 +10,7 @@ E_NO_FILES=82
 # The default directory is "docs" in a project to be hosted on GitHub Pages
 DEPLOY_DIR="docs"
 
-# Array of files to copy directly to the deployment directory
+# Array of files/subdirectories to copy directly to the deployment directory
 declare -a APPLICATION_FILES=(
 	"aggregator.js"
 	"dataloader.js"
@@ -21,6 +21,10 @@ declare -a APPLICATION_FILES=(
 	"questions.json"
 	"ratk_src_20120104.zip"
 )
+
+# Array of additional subdirectories that need to be created for reasons other
+# than full recursive copies
+declare -a ADDITIONAL_SUBDIRS=()
 
 # Writes an [ERROR] line to STDOUT followed by a newline character
 write_error_line()
@@ -71,15 +75,41 @@ else
 	write_info_line "Using \"$DEPLOY_DIR\" as the deployment directory"
 fi
 
+# If there are any additional subdirectories specified, create the subtrees
+if [ "${#ADDITIONAL_SUBDIRS[@]}" -gt "0" ]; then
+	write_info_line "Creating additional subdirectories..."
+	
+	for ADDITIONAL_SUBDIR in "${ADDITIONAL_SUBDIRS[@]}"
+	do
+		write_info_line "Creating subdirectory \"$DEPLOY_DIR/$ADDITIONAL_SUBDIR\"..."
+		mkdir -p "$DEPLOY_DIR/$ADDITIONAL_SUBDIR"
+	done
+
+	write_info_line "Finished creating additional subdirectories"
+else
+	write_info_line "No additional subdirectories to create."
+fi
+
 write_newline
 write_info_line "Beginning file deployment operations..."
 write_newline
 
-# Copy each application file into the deployment directory
+# Copy each application file or subdirectory into the deployment directory
 for APP_FILE in "${APPLICATION_FILES[@]}"
 do
-	cp "$APP_FILE" "$DEPLOY_DIR/$APP_FILE"
-	write_info_line "Copied $APP_FILE to $DEPLOY_DIR/$APP_FILE"
+	if [ -e "$APP_FILE" ]; then
+		if [ -f "$APP_FILE" ]; then
+			# Single file copy
+			cp "$APP_FILE" "$DEPLOY_DIR/$APP_FILE"
+			write_info_line "Copied $APP_FILE to $DEPLOY_DIR/$APP_FILE"
+		elif [ -d "$APP_FILE" ]; then
+			# Subdirectory so the copy will be recursive
+			cp -r "$APP_FILE" "$DEPLOY_DIR"
+			write_info_line "Copied directory $APP_FILE to $DEPLOY_DIR/$APP_FILE"
+		fi
+	else
+		write_info_line "Could not find $APP_FILE. Skipping."
+	fi
 done
 
 write_newline
