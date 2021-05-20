@@ -6,6 +6,8 @@ The initial version was released on October 28, 2010.
 
 In order to view the project in your browser, please open the `index.html` file in this repository.
 
+The project is also available live on GitHub Pages at [https://matthewfritz.github.io/race-around-the-kingdom](https://matthewfritz.github.io/race-around-the-kingdom).
+
 ## Table of Contents
 
 * [File List](#file-list)
