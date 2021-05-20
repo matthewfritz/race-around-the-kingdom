@@ -11,6 +11,7 @@ The project is available live on GitHub Pages at [https://matthewfritz.github.io
 * [File List](#file-list)
    * [Application Files](#application-files)
    * [Development / Deployment Files](#development-deployment-files)
+   * [Miscellaneous Files](#miscellaneous-files)
 * [Data Notes](#data-notes)
 * [Change Log](#change-log)
 
@@ -41,6 +42,22 @@ These files are only used during the development and deployment workflows. End-u
 `docs/` - Deployment directory for project hosting on GitHub Pages.
 
 `deploy-ghp.sh` - Shell script to package the [Application Files](#application-files) for deployment to GitHub Pages.
+
+### Miscellaneous Files
+
+These files are either kept for archival purposes or do not fit into a more-specific category.
+
+`Readme_old.txt` - The original README file from the 2012-01-04 version.
+
+`gameService.php` - Performs the question and answer processing from the 2010-10-28 version.
+
+`gold_star-850.jpg` - Original full-size star image from the 2010-10-28 version.
+
+`places.xml` - The data file containing map locations (in JSON format) from the 2010-10-28 version.
+
+`proxy.php` - Performs request proxying from the 2010-10-28 version.
+
+`search.txt` - Static Foursquare API response payload used to generate the `places.json` and `places.xml` data files.
 
 ## Data Notes
 
