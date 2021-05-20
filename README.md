@@ -57,7 +57,7 @@ These files are either kept for archival purposes or do not fit into a more-spec
 
 `proxy.php` - Performs request proxying from the 2010-10-28 version.
 
-`search.txt` - Static Foursquare API response payload used to generate `places.json` and `places.xml` from the 2010-10-28 version.
+`search.txt` - Static Foursquare API response payload used to generate the `places.json` and `places.xml` data files from the 2010-10-28 version.
 
 ## Data Notes
 
