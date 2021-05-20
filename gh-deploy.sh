@@ -19,6 +19,7 @@ declare -a APPLICATION_FILES=(
 	"marker.png"
 	"places.json"
 	"questions.json"
+	"ratk_src_20120104.zip"
 )
 
 # Writes an [ERROR] line to STDOUT followed by a newline character
