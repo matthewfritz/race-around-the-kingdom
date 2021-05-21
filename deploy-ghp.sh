@@ -9,17 +9,24 @@
 #
 # Usage:
 #
+# ./deploy-ghp.sh --help
+#
+# This will display the usage instructions.
+#
 # ./deploy-ghp.sh
+#
 # This will simply perform all steps without pushing upstream.
 #
 # ./deploy-ghp.sh -p
 # ./deploy-ghp.sh --push
+#
 # These will perform all steps and then push upstream with the default commit message.
 #
 # ./deploy-ghp.sh -p -m "Commit message"
 # ./deploy-ghp.sh -p --message "Commit message"
 # ./deploy-ghp.sh --push -m "Commit message"
 # ./deploy-ghp.sh --push --message "Commit message"
+#
 # These will perform all steps and then push upstream with a custom commit message.
 
 # Potential error codes
@@ -49,6 +56,39 @@ declare -a APPLICATION_FILES=(
 # than full recursive copies
 declare -a ADDITIONAL_SUBDIRS=()
 
+# Writes the script usage instructions to STDOUT followed by a newline character
+show_usage()
+{
+	echo "deploy-ghp.sh"
+	echo "By Matthew Fritz"
+	echo
+	echo "Creates a GitHub Pages deployment of project files in order to host the project on GitHub Pages."
+	echo "The items in the deployment directory can also be automatically pushed upstream based upon"
+	echo "supplied runtime arguments."
+	echo
+	echo "Usage:"
+	echo
+	echo "$0 --help"
+	echo
+	echo "This will display the usage instructions."
+	echo
+	echo "$0"
+	echo
+	echo "This will simply perform all steps without pushing upstream."
+	echo
+	echo "$0 -p"
+	echo "$0 --push"
+	echo
+	echo "These will perform all steps and then push upstream with the default commit message."
+	echo
+	echo "$0 -p -m \"Commit message\""
+	echo "$0 -p --message \"Commit message\""
+	echo "$0 --push -m \"Commit message\""
+	echo "$0 --push --message \"Commit message\""
+	echo
+	echo "These will perform all steps and then push upstream with a custom commit message."
+}
+
 # Writes an [ERROR] line to STDOUT followed by a newline character
 write_error_line()
 {
@@ -76,10 +116,18 @@ write_newline()
 	echo ""
 }
 
+# Show script usage if necessary
+if [ "$#" == "1" ]; then
+	if [ "$1" == "--help" ]; then
+		show_usage
+		exit
+	fi
+fi
+
 write_info_line "Beginning GitHub Pages project deployment..."
 
 # If there are no files to copy, exit immediately
-if [ "${#APPLICATION_FILES[@]}" -eq "0" ]; then
+if [ "${echoAPPLICATION_FILES[@]}" -eq "0" ]; then
 	write_error_exit_line $E_NO_FILES "There are no files to deploy"
 fi
 
@@ -99,7 +147,7 @@ else
 fi
 
 # If there are any additional subdirectories specified, create the subtrees
-if [ "${#ADDITIONAL_SUBDIRS[@]}" -gt "0" ]; then
+if [ "${echoADDITIONAL_SUBDIRS[@]}" -gt "0" ]; then
 	write_info_line "Creating additional subdirectories..."
 	
 	for ADDITIONAL_SUBDIR in "${ADDITIONAL_SUBDIRS[@]}"
@@ -135,12 +183,14 @@ do
 	fi
 done
 
+write_newline
+
 # If we have runtime arguments, we need to check how to perform the push upstream
-case "$#" in
+case "$echo" in
 	"1" )
 		if [ "$1" == "-p" ] || [ "$1" == "--push" ]; then
 			# Push upstream with default commit message
-			write_info_line "Pushing upstream with default commit message..."
+			write_info_line "Pushing directory \"$DEPLOY_DIR\" upstream with default commit message..."
 			git add "$DEPLOY_DIR"
 			git commit -m "$DEFAULT_COMMIT_MSG"
 			git push
@@ -150,7 +200,7 @@ case "$#" in
 		if [ "$1" == "-p" ] || [ "$1" == "--push" ]; then
 			if [ "$2" == "-m" ] || [ "$2" == "--message" ]; then
 				# Push upstream with custom commit message
-				write_info_line "Pushing upstream with custom commit message..."
+				write_info_line "Pushing directory \"$DEPLOY_DIR\" upstream with custom commit message..."
 				git add "$DEPLOY_DIR"
 				git commit -m "$3"
 				git push
@@ -159,7 +209,7 @@ case "$#" in
 	;;
 	* )
 		# Either no arguments specified or an unexpected number of arguments
-		write_info_line "Not pushing \"$DEPLOY_DIR\" upstream"
+		write_info_line "Not pushing directory \"$DEPLOY_DIR\" upstream"
 	;;
 esac
 
