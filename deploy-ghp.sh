@@ -203,16 +203,17 @@ write_newline
 
 # If we will be pushing, perform the necessary operations
 if [ "$do_upstream_push" == "true" ]; then
-	git add "$DEPLOY_DIR"
-
 	if [ ! "$commit_msg" == "$DEFAULT_COMMIT_MSG" ]; then
 		write_info_line "Pushing directory \"$DEPLOY_DIR\" upstream with custom commit message..."
 	else
 		write_info_line "Pushing directory \"$DEPLOY_DIR\" upstream with default commit message..."
 	fi
 
+	git add "$DEPLOY_DIR"
 	git commit -m "$commit_msg"
 	git push
+else
+	write_info_line "Not pushing \"$DEPLOY_DIR\" upstream"
 fi
 
 write_newline
