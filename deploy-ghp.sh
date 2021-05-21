@@ -116,18 +116,34 @@ write_newline()
 	echo ""
 }
 
-# Show script usage if necessary
-if [ "$#" == "1" ]; then
-	if [ "$1" == "--help" ]; then
-		show_usage
-		exit
-	fi
-fi
+# Check runtime arguments in order to determine script behavior
+do_upstream_push=false
+commit_msg="$DEFAULT_COMMIT_MSG"
+case "$#" in
+	"1" | "3" )
+		if [ "$1" == "--help" ]; then
+			# Show script usage
+			show_usage
+			exit
+		else
+			if [ "$1" == "-p" ] || [ "$1" == "--push" ]; then
+				# We will be pushing
+				do_upstream_push=true
+
+				# If the second argument is the commit message flag, use the
+				# third argument as the content of the message
+				if [ "$2" == "-m" ] || [ "$2" == "--message" ]; then
+					commit_msg="$3"
+				fi
+			fi
+		fi
+	;;
+esac
 
 write_info_line "Beginning GitHub Pages project deployment..."
 
 # If there are no files to copy, exit immediately
-if [ "${echoAPPLICATION_FILES[@]}" -eq "0" ]; then
+if [ "${#APPLICATION_FILES[@]}" -eq "0" ]; then
 	write_error_exit_line $E_NO_FILES "There are no files to deploy"
 fi
 
@@ -147,7 +163,7 @@ else
 fi
 
 # If there are any additional subdirectories specified, create the subtrees
-if [ "${echoADDITIONAL_SUBDIRS[@]}" -gt "0" ]; then
+if [ "${#ADDITIONAL_SUBDIRS[@]}" -gt "0" ]; then
 	write_info_line "Creating additional subdirectories..."
 	
 	for ADDITIONAL_SUBDIR in "${ADDITIONAL_SUBDIRS[@]}"
@@ -185,33 +201,19 @@ done
 
 write_newline
 
-# If we have runtime arguments, we need to check how to perform the push upstream
-case "$echo" in
-	"1" )
-		if [ "$1" == "-p" ] || [ "$1" == "--push" ]; then
-			# Push upstream with default commit message
-			write_info_line "Pushing directory \"$DEPLOY_DIR\" upstream with default commit message..."
-			git add "$DEPLOY_DIR"
-			git commit -m "$DEFAULT_COMMIT_MSG"
-			git push
-		fi
-	;;
-	"3" )
-		if [ "$1" == "-p" ] || [ "$1" == "--push" ]; then
-			if [ "$2" == "-m" ] || [ "$2" == "--message" ]; then
-				# Push upstream with custom commit message
-				write_info_line "Pushing directory \"$DEPLOY_DIR\" upstream with custom commit message..."
-				git add "$DEPLOY_DIR"
-				git commit -m "$3"
-				git push
-			fi
-		fi
-	;;
-	* )
-		# Either no arguments specified or an unexpected number of arguments
-		write_info_line "Not pushing directory \"$DEPLOY_DIR\" upstream"
-	;;
-esac
+# If we will be pushing, perform the necessary operations
+if [ "$do_upstream_push" == "true" ]; then
+	git add "$DEPLOY_DIR"
+
+	if [ ! "$commit_msg" == "$DEFAULT_COMMIT_MSG" ]; then
+		write_info_line "Pushing directory \"$DEPLOY_DIR\" upstream with custom commit message..."
+	else
+		write_info_line "Pushing directory \"$DEPLOY_DIR\" upstream with default commit message..."
+	fi
+
+	git commit -m "$commit_msg"
+	git push
+fi
 
 write_newline
 write_info_line "Finished file deployment operations"
