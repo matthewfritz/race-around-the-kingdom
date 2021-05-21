@@ -155,7 +155,7 @@ write_info_line "Beginning GitHub Pages project deployment..."
 # If the optional file containing file paths is present and there is at least
 # one path, use that instead
 write_newline
-if [ -f "$DEPLOY_FILES_PATH" ]; then
+if [ ! -f "$DEPLOY_FILES_PATH" ]; then
 	# Read the file list into an array
 	declare -a deploy_files
 	deploy_files=(`cat "$DEPLOY_FILES_PATH" | tr -d '\r'`) # Windows needs an additional \r deletion
@@ -169,7 +169,7 @@ if [ -f "$DEPLOY_FILES_PATH" ]; then
 		write_info_line "Deploy file \"$DEPLOY_FILES_PATH\" exists but no files are present. Using default list for deployment."
 	fi
 else
-	write_info_line "Using default list of files for deployment."
+	write_info_line "Deploy file \"$DEPLOY_FILES_PATH\" does not exist. Using default list of files."
 fi
 write_newline
 
