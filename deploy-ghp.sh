@@ -57,6 +57,7 @@ declare -a APPLICATION_FILES=(
 declare -a ADDITIONAL_SUBDIRS=()
 
 # Writes the script usage instructions to STDOUT followed by a newline character
+# Usage: show_usage
 show_usage()
 {
 	echo "deploy-ghp.sh"
@@ -90,6 +91,7 @@ show_usage()
 }
 
 # Writes an [ERROR] line to STDOUT followed by a newline character
+# Usage: write_error_line "Error message"
 write_error_line()
 {
 	echo "[ERROR] $1"
@@ -105,12 +107,14 @@ write_error_exit_line()
 }
 
 # Writes an [INFO] line to STDOUT followed by a newline character
+# Usage: write_info_line "Info line"
 write_info_line()
 {
 	echo "[INFO] $1"
 }
 
 # Writes a regular newline character to STDOUT
+# Usage: write_newline
 write_newline()
 {
 	echo ""
