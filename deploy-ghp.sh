@@ -158,7 +158,7 @@ write_newline
 if [ -f "$DEPLOY_FILES_PATH" ]; then
 	# Read the file list into an array
 	declare -a deploy_files
-	deploy_files=(`cat "$DEPLOY_FILES_PATH" | tr -d '\r' | tr '\n' ' '`) # Windows needs an additional \r deletion
+	deploy_files=(`cat "$DEPLOY_FILES_PATH" | tr -d '\r'`) # Windows needs an additional \r deletion
 
 	if [ "${#deploy_files[@]}" -gt "0" ]; then
 		# The file contents now become the set of application files to deploy
