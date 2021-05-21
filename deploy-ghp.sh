@@ -11,23 +11,23 @@
 #
 # ./deploy-ghp.sh --help
 #
-# This will display the usage instructions.
+# That will display the usage instructions.
 #
 # ./deploy-ghp.sh
 #
-# This will simply perform all steps without pushing upstream.
+# That will simply perform all steps without pushing upstream.
 #
 # ./deploy-ghp.sh -p
 # ./deploy-ghp.sh --push
 #
-# These will perform all steps and then push upstream with the default commit message.
+# Those will perform all steps and then push upstream with the default commit message.
 #
 # ./deploy-ghp.sh -p -m "Commit message"
 # ./deploy-ghp.sh -p --message "Commit message"
 # ./deploy-ghp.sh --push -m "Commit message"
 # ./deploy-ghp.sh --push --message "Commit message"
 #
-# These will perform all steps and then push upstream with a custom commit message.
+# Those will perform all steps and then push upstream with a custom commit message.
 
 # Potential error codes
 E_NO_DEPLOY_DIR=81
@@ -150,7 +150,7 @@ fi
 # Create the deployment directory if it does not exist
 if [ ! -d "$DEPLOY_DIR" ]; then
 	write_info_line "Creating deployment directory \"$DEPLOY_DIR\"..."
-	mkdir $DEPLOY_DIR
+	mkdir "$DEPLOY_DIR"
 
 	# If the deployment directory could not be created, exit immediately
 	if [ ! -d "$DEPLOY_DIR" ]; then
