@@ -1,6 +1,26 @@
 #! /bin/bash
 
-# Creates a GitHub Pages deployment of project files in order to host the project on GitHub Pages
+# deploy-ghp.sh
+# By Matthew Fritz
+#
+# Creates a GitHub Pages deployment of project files in order to host the project on GitHub Pages.
+# The items in the deployment directory can also be automatically pushed upstream based upon
+# supplied runtime arguments.
+#
+# Usage:
+#
+# ./deploy-ghp.sh
+# This will simply perform all steps without pushing upstream.
+#
+# ./deploy-ghp.sh -p
+# ./deploy-ghp.sh --push
+# These will perform all steps and then push upstream with the default commit message.
+#
+# ./deploy-ghp.sh -p -m "Commit message"
+# ./deploy-ghp.sh -p --message "Commit message"
+# ./deploy-ghp.sh --push -m "Commit message"
+# ./deploy-ghp.sh --push --message "Commit message"
+# These will perform all steps and then push upstream with a custom commit message.
 
 # Potential error codes
 E_NO_DEPLOY_DIR=81
@@ -9,6 +29,9 @@ E_NO_FILES=82
 # Deployment directory
 # The default directory is "docs" in a project to be hosted on GitHub Pages
 DEPLOY_DIR="docs"
+
+# Default commit message if a custom message is not provided as an argument
+DEFAULT_COMMIT_MSG="Updated items in the $DEPLOY_DIR directory for GitHub Pages"
 
 # Array of files/subdirectories to copy directly to the deployment directory
 declare -a APPLICATION_FILES=(
@@ -111,6 +134,34 @@ do
 		write_info_line "Could not find $APP_FILE. Skipping."
 	fi
 done
+
+# If we have runtime arguments, we need to check how to perform the push upstream
+case "$#" in
+	"1" )
+		if [ "$1" == "-p" ] || [ "$1" == "--push" ]; then
+			# Push upstream with default commit message
+			write_info_line "Pushing upstream with default commit message..."
+			git add "$DEPLOY_DIR"
+			git commit -m "$DEFAULT_COMMIT_MSG"
+			git push
+		fi
+	;;
+	"3" )
+		if [ "$1" == "-p" ] || [ "$1" == "--push" ]; then
+			if [ "$2" == "-m" ] || [ "$2" == "--message" ]; then
+				# Push upstream with custom commit message
+				write_info_line "Pushing upstream with custom commit message..."
+				git add "$DEPLOY_DIR"
+				git commit -m "$3"
+				git push
+			fi
+		fi
+	;;
+	* )
+		# Either no arguments specified or an unexpected number of arguments
+		write_info_line "Not pushing \"$DEPLOY_DIR\" upstream"
+	;;
+esac
 
 write_newline
 write_info_line "Finished file deployment operations"
