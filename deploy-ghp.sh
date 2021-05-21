@@ -70,23 +70,23 @@ show_usage()
 	echo
 	echo "$0 --help"
 	echo
-	echo "This will display the usage instructions."
+	echo "That will display the usage instructions."
 	echo
 	echo "$0"
 	echo
-	echo "This will simply perform all steps without pushing upstream."
+	echo "That will simply perform all steps without pushing upstream."
 	echo
 	echo "$0 -p"
 	echo "$0 --push"
 	echo
-	echo "These will perform all steps and then push upstream with the default commit message."
+	echo "Those will perform all steps and then push upstream with the default commit message."
 	echo
 	echo "$0 -p -m \"Commit message\""
 	echo "$0 -p --message \"Commit message\""
 	echo "$0 --push -m \"Commit message\""
 	echo "$0 --push --message \"Commit message\""
 	echo
-	echo "These will perform all steps and then push upstream with a custom commit message."
+	echo "Those will perform all steps and then push upstream with a custom commit message."
 }
 
 # Writes an [ERROR] line to STDOUT followed by a newline character
