@@ -40,7 +40,13 @@ DEPLOY_DIR="docs"
 # Default commit message if a custom message is not provided as an argument
 DEFAULT_COMMIT_MSG="Updated items in the $DEPLOY_DIR directory for GitHub Pages"
 
-# Array of files/subdirectories to copy directly to the deployment directory
+# Path to an optional file that lists the set of files to deploy, one per line;
+# this will override the default entries in the APPLICATION_FILES array if the
+# file exists
+DEPLOY_FILES_PATH="deploy-ghp-files.txt"
+
+# Default array of files/subdirectories to copy directly to the deployment directory;
+# this will be overriden by the entries in $DEPLOY_FILES_PATH if it exists
 declare -a APPLICATION_FILES=(
    "aggregator.js"
    "dataloader.js"
@@ -146,6 +152,27 @@ esac
 
 write_info_line "Beginning GitHub Pages project deployment..."
 
+# If the optional file containing file paths is present and there is at least
+# one path, use that instead
+write_newline
+if [ -f "$DEPLOY_FILES_PATH" ]; then
+	# Read the file list into an array
+	declare -a deploy_files
+	deploy_files=(`cat "$DEPLOY_FILES_PATH" | tr -d '\r' | tr '\n' ' '`) # Windows needs an additional \r deletion
+
+	if [ "${#deploy_files[@]}" -gt "0" ]; then
+		# The file contents now become the set of application files to deploy
+		write_info_line "Using the list of files from \"$DEPLOY_FILES_PATH\" deploy file for deployment."
+		APPLICATION_FILES=("${deploy_files[@]}") # Copy array $deploy_files to $APPLICATION_FILES
+	else
+		# No files present in optional file
+		write_info_line "Deploy file \"$DEPLOY_FILES_PATH\" exists but no files are present. Using default list for deployment."
+	fi
+else
+	write_info_line "Using default list of files for deployment."
+fi
+write_newline
+
 # If there are no files to copy, exit immediately
 if [ "${#APPLICATION_FILES[@]}" -eq "0" ]; then
    write_error_exit_line $E_NO_FILES "There are no files to deploy"
@@ -192,11 +219,11 @@ do
       if [ -f "$APP_FILE" ]; then
          # Single file copy
          cp "$APP_FILE" "$DEPLOY_DIR/$APP_FILE"
-         write_info_line "Copied $APP_FILE to $DEPLOY_DIR/$APP_FILE"
+         write_info_line "* Copied $APP_FILE to $DEPLOY_DIR/$APP_FILE"
       elif [ -d "$APP_FILE" ]; then
          # Subdirectory so the copy will be recursive
          cp -r "$APP_FILE" "$DEPLOY_DIR"
-         write_info_line "Copied directory $APP_FILE to $DEPLOY_DIR/$APP_FILE"
+         write_info_line "* Copied directory $APP_FILE to $DEPLOY_DIR/$APP_FILE"
       fi
    else
       write_info_line "Could not find $APP_FILE. Skipping."

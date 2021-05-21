@@ -1,0 +1,8 @@
+aggregator.js
+dataloader.js
+index.html
+jquery-1.7.1.min.js
+marker.png
+places.json
+questions.json
+ratk_src_20120104.zip
