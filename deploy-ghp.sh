@@ -107,7 +107,7 @@ write_error_exit_line()
 }
 
 # Writes an [INFO] line to STDOUT followed by a newline character
-# Usage: write_info_line "Info line"
+# Usage: write_info_line "Info message"
 write_info_line()
 {
 	echo "[INFO] $1"
