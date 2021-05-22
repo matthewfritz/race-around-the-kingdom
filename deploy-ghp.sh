@@ -36,12 +36,18 @@
 # If a file called "deploy-ghp-files.txt" exists then it will be read and replace the
 # default list of files. Each line of the file may contain only one file path.
 #
+# If a line in "deploy-ghp-files.txt" begins with the token \"MKDIR:\", a matching directory
+# tree will be created with the \"mkdir -p\" command.
+#
 # A list of file paths, one per line, can be generated with either of the following commands:
 #    ls |  tr '[:space:]' '\n'
 #    ls *.html | tr '[:space:]' '\n' # (allows for file patterns)
 #
 # Current script version (GitHub Gist):
 # https://gist.github.com/matthewfritz/97f08e955c8077d50dfd178aa20c937a
+#
+# Comment with instructions on creating the "deploy-ghp-files.txt" deploy file:
+# https://gist.github.com/matthewfritz/97f08e955c8077d50dfd178aa20c937a#gistcomment-3752526
 
 # Potential error codes
 E_NO_DEPLOY_DIR=81
@@ -60,7 +66,7 @@ DEFAULT_COMMIT_MSG="Deployed necessary items to the $DEPLOY_DIR directory"
 DEPLOY_FILES_PATH="deploy-ghp-files.txt"
 
 # Default array of files/subdirectories to copy directly to the deployment directory;
-# this will be overriden by the entries in $DEPLOY_FILES_PATH if it exists
+# this will be overridden by the entries in $DEPLOY_FILES_PATH if it exists
 declare -a APPLICATION_FILES=(
    "aggregator.js"
    "dataloader.js"
@@ -73,7 +79,8 @@ declare -a APPLICATION_FILES=(
 )
 
 # Array of additional subdirectories that need to be created for reasons other
-# than full recursive copies
+# than full recursive copies; this can be overridden by lines in $DEPLOY_FILES_PATH
+# that begin with the token "MKDIR:"
 declare -a ADDITIONAL_SUBDIRS=()
 
 # Writes the script usage instructions to STDOUT followed by a newline character
@@ -116,12 +123,18 @@ show_usage()
    echo "If a file called \"$DEPLOY_FILES_PATH\" exists then it will be read and replace the"
    echo "default list of files. Each line of the file may contain only one file path."
    echo
+   echo "If a line in \"$DEPLOY_FILES_PATH\" begins with the token \"MKDIR:\", a matching directory"
+   echo "tree will be created with the \"mkdir -p\" command."
+   echo
    echo "A list of file paths, one per line, can be generated with either of the following commands:"
    echo "   ls | tr '[:space:]' '\n'"
    echo "   ls *.html | tr '[:space:]' '\n' # (allows for file patterns)"
    echo
    echo "Current script version (GitHub Gist):"
    echo "https://gist.github.com/matthewfritz/97f08e955c8077d50dfd178aa20c937a"
+   echo
+   echo "Comment with instructions on creating the \"$DEPLOY_FILES_PATH\" deploy file:"
+   echo "https://gist.github.com/matthewfritz/97f08e955c8077d50dfd178aa20c937a#gistcomment-3752526"
 }
 
 # Writes an [ERROR] line to STDOUT followed by a newline character
@@ -187,11 +200,35 @@ if [ -f "$DEPLOY_FILES_PATH" ]; then
    # Read the file list into an array
    declare -a deploy_files
    deploy_files=(`cat "$DEPLOY_FILES_PATH" | tr -d '\r'`) # Windows needs an additional \r deletion
+   let dep_file_len="${#deploy_files[@]}"
 
    if [ "${#deploy_files[@]}" -gt "0" ]; then
       # The file contents now become the set of application files to deploy
       write_info_line "Using the list of files from \"$DEPLOY_FILES_PATH\" deploy file for deployment."
       APPLICATION_FILES=("${deploy_files[@]}") # Copy array $deploy_files to $APPLICATION_FILES
+
+      # Resolve any optional directories that may be present in the file
+      declare -a optional_dirs=()
+      let dep_file_index="0"
+      while [ "$dep_file_index" -lt "$dep_file_len" ]
+      do
+         # If the line begins with "MKDIR:" then add the directory to the array
+         # without the leading "MKDIR:" token
+         deploy_file="${deploy_files[$dep_file_index]}"
+         if [ "${#deploy_file}" -gt "6" ] && [ "${deploy_file:0:6}" == "MKDIR:" ]; then
+            optional_dirs[${#optional_dirs[*]}]=${deploy_file#"MKDIR:"}
+
+            # Remove the line from the $APPLICATION_FILES array so we don't create
+            # erroneous output when checking path existence during file deployment
+            unset APPLICATION_FILES[$dep_file_index]
+         fi
+
+         (( dep_file_index++ ))
+      done
+
+      if [ "${#optional_dirs[@]}" -gt "0" ]; then
+         ADDITIONAL_SUBDIRS=("${optional_dirs[@]}")
+      fi
    else
       # No files present in optional file
       write_info_line "Deploy file \"$DEPLOY_FILES_PATH\" exists but no files are present. Using default list for deployment."
@@ -220,17 +257,20 @@ if [ ! -d "$DEPLOY_DIR" ]; then
 else
    write_info_line "Using \"$DEPLOY_DIR\" as the deployment directory"
 fi
+write_newline
 
 # If there are any additional subdirectories specified, create the subtrees
 if [ "${#ADDITIONAL_SUBDIRS[@]}" -gt "0" ]; then
    write_info_line "Creating additional subdirectories..."
+   write_newline
    
    for ADDITIONAL_SUBDIR in "${ADDITIONAL_SUBDIRS[@]}"
    do
-      write_info_line "Creating subdirectory \"$DEPLOY_DIR/$ADDITIONAL_SUBDIR\"..."
+      write_info_line "* Creating subdirectory \"$DEPLOY_DIR/$ADDITIONAL_SUBDIR\"..."
       mkdir -p "$DEPLOY_DIR/$ADDITIONAL_SUBDIR"
    done
 
+   write_newline
    write_info_line "Finished creating additional subdirectories"
 else
    write_info_line "No additional subdirectories to create."
