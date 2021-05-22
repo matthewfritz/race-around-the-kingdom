@@ -4,6 +4,9 @@
 # By Matthew Fritz
 #
 # Creates a GitHub Pages deployment of project files in order to host the project on GitHub Pages.
+# Realistically, this can also be used for any kind of copy-based operation with an arbitrary set
+# of files and/or directories.
+#
 # The items in the deployment directory can also be automatically pushed upstream based upon
 # supplied runtime arguments.
 #
@@ -49,7 +52,7 @@ E_NO_FILES=82
 DEPLOY_DIR="docs"
 
 # Default commit message if a custom message is not provided as an argument
-DEFAULT_COMMIT_MSG="Updated items in the $DEPLOY_DIR directory for GitHub Pages"
+DEFAULT_COMMIT_MSG="Deployed necessary items to the $DEPLOY_DIR directory"
 
 # Path to an optional file that lists the set of files to deploy, one per line;
 # this will override the default entries in the APPLICATION_FILES array if the
@@ -81,6 +84,9 @@ show_usage()
    echo "By Matthew Fritz"
    echo
    echo "Creates a GitHub Pages deployment of project files in order to host the project on GitHub Pages."
+   echo "Realistically, this can also be used for any kind of copy-based operation with an arbitrary set"
+   echo "of files and/or directories."
+   echo
    echo "The items in the deployment directory can also be automatically pushed upstream based upon"
    echo "supplied runtime arguments."
    echo
@@ -172,7 +178,7 @@ case "$#" in
    ;;
 esac
 
-write_info_line "Beginning GitHub Pages project deployment..."
+write_info_line "Beginning project deployment..."
 
 # If the optional file containing file paths is present and there is at least
 # one path, use that instead
@@ -271,6 +277,7 @@ fi
 
 write_newline
 write_info_line "Finished file deployment operations"
+write_info_line "Finished project deployment"
 write_newline
 
 write_info_line "Done"
