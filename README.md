@@ -21,19 +21,19 @@ The project is available live on GitHub Pages at [https://matthewfritz.github.io
 
 These files are **required** for the application to run.
 
-`aggregator.js` - Performs map-plotting and game-running tasks
+`aggregator.js` - Performs map-plotting and game-running tasks.
 
-`dataloader.js` - Loads and parses location and question data
+`dataloader.js` - Loads and parses location and question data.
 
-`index.html` - The main display page for the game
+`index.html` - The main display page for the game.
 
-`jquery-1.7.1.min.js` - The jQuery JavaScript library (version 1.7.1)
+`jquery-1.7.1.min.js` - The jQuery JavaScript library (version 1.7.1).
 
-`marker.png` - The star image used for a visited location on the map
+`marker.png` - The star image used for a visited location on the map.
 
-`places.json` - The data file containing map locations (in JSON format)
+`places.json` - The data file containing map locations (in JSON format).
 
-`questions.json` - The data file containing questions (in JSON format)
+`questions.json` - The data file containing questions (in JSON format).
 
 ### Development / Deployment Files
 
@@ -43,9 +43,13 @@ These files are only used during the development and deployment workflows. End-u
 
 `deploy-ghp.sh` - Shell script to package the [Application Files](#application-files) for deployment to GitHub Pages.
 
-`deploy-ghp-files.txt` - Deployment file that is used in conjunction with `deploy-ghp.sh`.
+`deploy-ghp-config.conf` - Optional deployment configuration file used in conjunction with `deploy-ghp.sh`.
 
-`deploy-ghp-deploy-file-overview.md` - Instructions regarding structure and content of `deploy-ghp-files.txt`
+`deploy-ghp-files.txt` - Optional deployment file used in conjunction with `deploy-ghp.sh`.
+
+`deploy-ghp-config-file-overview.md` - Instructions regarding structure and content of `deploy-ghp-config.conf`.
+
+`deploy-ghp-deploy-file-overview.md` - Instructions regarding structure and content of `deploy-ghp-files.txt`.
 
 ### Miscellaneous Files
 

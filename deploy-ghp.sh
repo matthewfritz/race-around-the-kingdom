@@ -32,6 +32,10 @@
 #
 # Those will perform all steps and then push upstream with a custom commit message.
 #
+# The default deployment configuration options can be overridden at runtime using an
+# optional configuration file named "deploy-ghp-config.conf". If that file exists, the
+# relevant configuration values will be loaded.
+#
 # There is also the option to use a deploy file containing the list of file paths to deploy.
 # If a file called "deploy-ghp-files.txt" exists then it will be read and replace the
 # default list of files. Each line of the file may contain only one file path.
@@ -46,6 +50,9 @@
 # Current script version (GitHub Gist):
 # https://gist.github.com/matthewfritz/97f08e955c8077d50dfd178aa20c937a
 #
+# Comment with instructions on creating the "deploy-ghp-config.conf" config file:
+# https://gist.github.com/matthewfritz/97f08e955c8077d50dfd178aa20c937a#gistcomment-3752801
+#
 # Comment with instructions on creating the "deploy-ghp-files.txt" deploy file:
 # https://gist.github.com/matthewfritz/97f08e955c8077d50dfd178aa20c937a#gistcomment-3752526
 
@@ -59,6 +66,10 @@ DEPLOY_DIR="docs"
 
 # Default commit message if a custom message is not provided as an argument
 DEFAULT_COMMIT_MSG="Deployed necessary items to the $DEPLOY_DIR directory"
+
+# Path to an optional file that provides the set of configuration options to
+# use when performing the deployment
+DEPLOY_CONFIG_PATH="deploy-ghp-config.conf"
 
 # Path to an optional file that lists the set of files to deploy, one per line;
 # this will override the default entries in the APPLICATION_FILES array if the
@@ -119,6 +130,10 @@ show_usage()
    echo
    echo "Those will perform all steps and then push upstream with a custom commit message."
    echo
+   echo "The default deployment configuration options can be overridden at runtime using an"
+   echo "optional configuration file named \"$DEPLOY_CONFIG_PATH\". If that file exists, the"
+   echo "relevant configuration values will be loaded."
+   echo
    echo "There is also the option to use a deploy file containing the list of file paths to deploy."
    echo "If a file called \"$DEPLOY_FILES_PATH\" exists then it will be read and replace the"
    echo "default list of files. Each line of the file may contain only one file path."
@@ -132,6 +147,9 @@ show_usage()
    echo
    echo "Current script version (GitHub Gist):"
    echo "https://gist.github.com/matthewfritz/97f08e955c8077d50dfd178aa20c937a"
+   echo
+   echo "Comment with instructions on creating the \"$DEPLOY_CONFIG_PATH\" config file:"
+   echo "https://gist.github.com/matthewfritz/97f08e955c8077d50dfd178aa20c937a#gistcomment-3752801"
    echo
    echo "Comment with instructions on creating the \"$DEPLOY_FILES_PATH\" deploy file:"
    echo "https://gist.github.com/matthewfritz/97f08e955c8077d50dfd178aa20c937a#gistcomment-3752526"
@@ -192,6 +210,21 @@ case "$#" in
 esac
 
 write_info_line "Beginning project deployment..."
+
+# Load the deployment configuration file if it exists
+write_newline
+if [ -f "$DEPLOY_CONFIG_PATH" ]; then
+	write_info_line "Using the deployment configuration from \"$DEPLOY_CONFIG_PATH\" config file."
+	. "$DEPLOY_CONFIG_PATH"
+else
+	write_info_line "Config file \"$DEPLOY_CONFIG_PATH\" does not exist. Using default configuration."
+fi
+write_newline
+
+# Display configuration
+write_info_line "* Deployment directory: \"$DEPLOY_DIR\""
+write_info_line "* Default commit message: \"$DEFAULT_COMMIT_MSG\""
+write_info_line "* Deploy file list path: \"$DEPLOY_FILES_PATH\""
 
 # If the optional file containing file paths is present and there is at least
 # one path, use that instead
