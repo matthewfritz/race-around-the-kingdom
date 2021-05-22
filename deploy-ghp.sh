@@ -9,25 +9,36 @@
 #
 # Usage:
 #
-# ./deploy-ghp.sh --help
+#    ./deploy-ghp.sh --help
 #
 # That will display the usage instructions.
 #
-# ./deploy-ghp.sh
+#    ./deploy-ghp.sh
 #
 # That will simply perform all steps without pushing upstream.
 #
-# ./deploy-ghp.sh -p
-# ./deploy-ghp.sh --push
+#    ./deploy-ghp.sh -p
+#    ./deploy-ghp.sh --push
 #
 # Those will perform all steps and then push upstream with the default commit message.
 #
-# ./deploy-ghp.sh -p -m "Commit message"
-# ./deploy-ghp.sh -p --message "Commit message"
-# ./deploy-ghp.sh --push -m "Commit message"
-# ./deploy-ghp.sh --push --message "Commit message"
+#    ./deploy-ghp.sh -p -m "Commit message"
+#    ./deploy-ghp.sh -p --message "Commit message"
+#    ./deploy-ghp.sh --push -m "Commit message"
+#    ./deploy-ghp.sh --push --message "Commit message"
 #
 # Those will perform all steps and then push upstream with a custom commit message.
+#
+# There is also the option to use a deploy file containing the list of file paths to deploy.
+# If a file called "deploy-ghp-files.txt" exists then it will be read and replace the
+# default list of files. Each line of the file may contain only one file path.
+#
+# A list of file paths, one per line, can be generated with either of the following commands:
+#    ls |  tr '[:space:]' '\n'
+#    ls *.html | tr '[:space:]' '\n' # (allows for file patterns)
+#
+# Current script version (GitHub Gist):
+# https://gist.github.com/matthewfritz/97f08e955c8077d50dfd178aa20c937a
 
 # Potential error codes
 E_NO_DEPLOY_DIR=81
@@ -75,25 +86,36 @@ show_usage()
    echo
    echo "Usage:"
    echo
-   echo "$0 --help"
+   echo "   $0 --help"
    echo
    echo "That will display the usage instructions."
    echo
-   echo "$0"
+   echo "   $0"
    echo
    echo "That will simply perform all steps without pushing upstream."
    echo
-   echo "$0 -p"
-   echo "$0 --push"
+   echo "   $0 -p"
+   echo "   $0 --push"
    echo
    echo "Those will perform all steps and then push upstream with the default commit message."
    echo
-   echo "$0 -p -m \"Commit message\""
-   echo "$0 -p --message \"Commit message\""
-   echo "$0 --push -m \"Commit message\""
-   echo "$0 --push --message \"Commit message\""
+   echo "   $0 -p -m \"Commit message\""
+   echo "   $0 -p --message \"Commit message\""
+   echo "   $0 --push -m \"Commit message\""
+   echo "   $0 --push --message \"Commit message\""
    echo
    echo "Those will perform all steps and then push upstream with a custom commit message."
+   echo
+   echo "There is also the option to use a deploy file containing the list of file paths to deploy."
+   echo "If a file called \"$DEPLOY_FILES_PATH\" exists then it will be read and replace the"
+   echo "default list of files. Each line of the file may contain only one file path."
+   echo
+   echo "A list of file paths, one per line, can be generated with either of the following commands:"
+   echo "   ls | tr '[:space:]' '\n'"
+   echo "   ls *.html | tr '[:space:]' '\n' # (allows for file patterns)"
+   echo
+   echo "Current script version (GitHub Gist):"
+   echo "https://gist.github.com/matthewfritz/97f08e955c8077d50dfd178aa20c937a"
 }
 
 # Writes an [ERROR] line to STDOUT followed by a newline character
