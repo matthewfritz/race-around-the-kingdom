@@ -21,8 +21,8 @@ Each line may contain only one file path.
 
 ### Line-by-Line Operations
 
-* If a line references the path to a file, it will be copied directly with `cp`
-* If a line references the path to a directory, it will be copied recursively with `cp -r`
+* If a line references the path to a file, it will be copied directly with `cp`.
+* If a line references the path to a directory, it will be copied recursively with `cp -r`.
 * If a line begins with `MKDIR:`, a directory tree will be created with `mkdir -p`.
 
 The contents of this file will override the default entries in the `$APPLICATION_FILES` array and can also override the default entries in the `$ADDITIONAL_SUBDIRS` array.
