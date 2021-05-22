@@ -1,6 +1,6 @@
-## Deploy File Overview
+# Deploy File Overview
 
-### File Contents and Formatting
+## File Contents and Formatting
 
 Contents of optional deploy file `deploy-ghp-files.txt` should be formatted like the following example:
 
@@ -19,7 +19,7 @@ opt/docs/document1.xml
 
 Each line may contain only one file path.
 
-#### Line-by-Line Operations
+### Line-by-Line Operations
 
 * If a line references the path to a file, it will be copied directly with `cp`
 * If a line references the path to a directory, it will be copied recursively with `cp -r`
@@ -27,7 +27,7 @@ Each line may contain only one file path.
 
 The contents of this file will override the default entries in the `$APPLICATION_FILES` array and can also override the default entries in the `$ADDITIONAL_SUBDIRS` array.
 
-### Example File Operations
+## Example File Operations
 
 The example performs the following operations with the deployment directory as the target:
 1. Copies `file1.html` directly
@@ -58,7 +58,7 @@ docs/
    file4.html
 ```
 
-### Generating the Filename List
+## Generating the Filename List
 
 You can generate a set of filenames, one per line, with either of these two commands:
 1. `ls | tr '[:space:]' '\n'`

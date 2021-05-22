@@ -43,6 +43,10 @@ These files are only used during the development and deployment workflows. End-u
 
 `deploy-ghp.sh` - Shell script to package the [Application Files](#application-files) for deployment to GitHub Pages.
 
+`deploy-ghp-files.txt` - Deployment file that is used in conjunction with `deploy-ghp.sh`.
+
+`deploy-ghp-deploy-file-overview.md` - Instructions regarding structure and content of `deploy-ghp-files.txt`
+
 ### Miscellaneous Files
 
 These files are either kept for archival purposes or do not fit into a more-specific category.
