@@ -36,8 +36,8 @@
 # If a file called "deploy-ghp-files.txt" exists then it will be read and replace the
 # default list of files. Each line of the file may contain only one file path.
 #
-# If a line in "deploy-ghp-files.txt" begins with the token \"MKDIR:\", a matching directory
-# tree will be created with the \"mkdir -p\" command.
+# If a line in "deploy-ghp-files.txt" begins with the token "MKDIR:", a matching directory
+# tree will be created with the "mkdir -p" command.
 #
 # A list of file paths, one per line, can be generated with either of the following commands:
 #    ls |  tr '[:space:]' '\n'
