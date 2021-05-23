@@ -115,21 +115,21 @@ check_deployment_files()
    do
       # Existence check first
       if [ -e "$dep_file" ]; then
-      	# Type check on the deployment file entry
-      	if [ -f "$dep_file" ] || [ -d "$dep_file" ]; then
-      		(( dep_file_count++ ))
-      	else
-      		# Not a file or directory
-      		write_error_line "* Deployment file entry \"$dep_file\" is not a file or directory. Skipping."
-      		(( skip_file_count++ ))
-      	fi
+         # Type check on the deployment file entry
+         if [ -f "$dep_file" ] || [ -d "$dep_file" ]; then
+            (( dep_file_count++ ))
+         else
+            # Not a file or directory
+            write_error_line "* Deployment file entry \"$dep_file\" is not a file or directory. Skipping."
+            (( skip_file_count++ ))
+         fi
       else
-      	write_error_line "* Deployment file entry \"$dep_file\" does not exist. Skipping."
-      	(( skip_file_count++ ))
+         write_error_line "* Deployment file entry \"$dep_file\" does not exist. Skipping."
+         (( skip_file_count++ ))
       fi
-	done
+   done
 
-	write_newline
+   write_newline
    write_info_line "$dep_file_count item(s) valid for deployment. $skip_file_count item(s) skipped."
    write_info_line "Finished deployment file list validity check"
 }
@@ -241,8 +241,8 @@ case "$#" in
          show_usage
          exit
       elif [ "$1" == "-c" ] || [ "$1" == "--check" ]; then
-      	# We will be checking deployment file list validity
-      	do_deploy_check=true
+         # We will be checking deployment file list validity
+         do_deploy_check=true
       elif [ "$1" == "-p" ] || [ "$1" == "--push" ]; then
          # We will be pushing
          do_upstream_push=true
@@ -261,10 +261,10 @@ write_info_line "Beginning project deployment..."
 # Load the deployment configuration file if it exists
 write_newline
 if [ -f "$DEPLOY_CONFIG_PATH" ]; then
-	write_info_line "Using the deployment configuration from \"$DEPLOY_CONFIG_PATH\" config file."
-	. "$DEPLOY_CONFIG_PATH"
+   write_info_line "Using the deployment configuration from \"$DEPLOY_CONFIG_PATH\" config file."
+   . "$DEPLOY_CONFIG_PATH"
 else
-	write_info_line "Config file \"$DEPLOY_CONFIG_PATH\" does not exist. Using default configuration."
+   write_info_line "Config file \"$DEPLOY_CONFIG_PATH\" does not exist. Using default configuration."
 fi
 write_newline
 
@@ -326,8 +326,8 @@ fi
 # If we are merely performing a deployment file list validation check, perform it
 # and then exit directly
 if [ "$do_deploy_check" == "true" ]; then
-	check_deployment_files
-	exit
+   check_deployment_files
+   exit
 fi
 
 # Create the deployment directory if it does not exist
