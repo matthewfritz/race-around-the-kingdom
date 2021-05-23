@@ -18,19 +18,24 @@
 #
 #    ./deploy-ghp.sh
 #
-# That will simply perform all steps without pushing upstream.
+# That will simply perform all deployment steps without pushing upstream.
+#
+#    ./deploy-ghp.sh -c
+#    ./deploy-ghp.sh --check
+#
+# Those will check the set of deployment files for validity and then exit without deploying.
 #
 #    ./deploy-ghp.sh -p
 #    ./deploy-ghp.sh --push
 #
-# Those will perform all steps and then push upstream with the default commit message.
+# Those will perform all deployment steps and then push upstream with the default commit message.
 #
 #    ./deploy-ghp.sh -p -m "Commit message"
 #    ./deploy-ghp.sh -p --message "Commit message"
 #    ./deploy-ghp.sh --push -m "Commit message"
 #    ./deploy-ghp.sh --push --message "Commit message"
 #
-# Those will perform all steps and then push upstream with a custom commit message.
+# Those will perform all deployment steps and then push upstream with a custom commit message.
 #
 # The default deployment configuration options can be overridden at runtime using an
 # optional configuration file named "deploy-ghp-config.conf". If that file exists, the
@@ -94,6 +99,41 @@ declare -a APPLICATION_FILES=(
 # that begin with the token "MKDIR:"
 declare -a ADDITIONAL_SUBDIRS=()
 
+# Performs a validity check on all files within $APPLICATION_FILES to determine
+# what files and/or directories will be deployed successfully. Validity checks
+# will only generate output if there is some kind of error.
+# Usage: check_deployment_files
+check_deployment_files()
+{
+   write_info_line "Performing validity check on deployment file list..."
+
+   local dep_file_count=0
+   local skip_file_count=0
+
+   # Check validity of each path in the deployment file list
+   for dep_file in "${APPLICATION_FILES[@]}"
+   do
+      # Existence check first
+      if [ -e "$dep_file" ]; then
+      	# Type check on the deployment file entry
+      	if [ -f "$dep_file" ] || [ -d "$dep_file" ]; then
+      		(( dep_file_count++ ))
+      	else
+      		# Not a file or directory
+      		write_error_line "* Deployment file entry \"$dep_file\" is not a file or directory. Skipping."
+      		(( skip_file_count++ ))
+      	fi
+      else
+      	write_error_line "* Deployment file entry \"$dep_file\" does not exist. Skipping."
+      	(( skip_file_count++ ))
+      fi
+	done
+
+	write_newline
+   write_info_line "$dep_file_count item(s) valid for deployment. $skip_file_count item(s) skipped."
+   write_info_line "Finished deployment file list validity check"
+}
+
 # Writes the script usage instructions to STDOUT followed by a newline character
 # Usage: show_usage
 show_usage()
@@ -117,6 +157,11 @@ show_usage()
    echo "   $0"
    echo
    echo "That will simply perform all steps without pushing upstream."
+   echo
+   echo "  $0 -c"
+   echo "  $0 --check"
+   echo
+   echo "Those will check the set of deployment files for validity and then exit without deploying."
    echo
    echo "   $0 -p"
    echo "   $0 --push"
@@ -186,6 +231,7 @@ write_newline()
 }
 
 # Check runtime arguments in order to determine script behavior
+do_deploy_check=false
 do_upstream_push=false
 commit_msg="$DEFAULT_COMMIT_MSG"
 case "$#" in
@@ -194,16 +240,17 @@ case "$#" in
          # Show script usage
          show_usage
          exit
-      else
-         if [ "$1" == "-p" ] || [ "$1" == "--push" ]; then
-            # We will be pushing
-            do_upstream_push=true
+      elif [ "$1" == "-c" ] || [ "$1" == "--check" ]; then
+      	# We will be checking deployment file list validity
+      	do_deploy_check=true
+      elif [ "$1" == "-p" ] || [ "$1" == "--push" ]; then
+         # We will be pushing
+         do_upstream_push=true
 
-            # If the second argument is the commit message flag, use the
-            # third argument as the content of the message
-            if [ "$2" == "-m" ] || [ "$2" == "--message" ]; then
-               commit_msg="$3"
-            fi
+         # If the second argument is the commit message flag, use the
+         # third argument as the content of the message
+         if [ "$2" == "-m" ] || [ "$2" == "--message" ]; then
+            commit_msg="$3"
          fi
       fi
    ;;
@@ -276,6 +323,13 @@ if [ "${#APPLICATION_FILES[@]}" -eq "0" ]; then
    write_error_exit_line $E_NO_FILES "There are no files to deploy"
 fi
 
+# If we are merely performing a deployment file list validation check, perform it
+# and then exit directly
+if [ "$do_deploy_check" == "true" ]; then
+	check_deployment_files
+	exit
+fi
+
 # Create the deployment directory if it does not exist
 if [ ! -d "$DEPLOY_DIR" ]; then
    write_info_line "Creating deployment directory \"$DEPLOY_DIR\"..."
@@ -314,6 +368,8 @@ write_info_line "Beginning file deployment operations..."
 write_newline
 
 # Copy each application file or subdirectory into the deployment directory
+num_deployed_files=0
+num_skipped_files=0
 for APP_FILE in "${APPLICATION_FILES[@]}"
 do
    if [ -e "$APP_FILE" ]; then
@@ -321,13 +377,20 @@ do
          # Single file copy
          cp "$APP_FILE" "$DEPLOY_DIR/$APP_FILE"
          write_info_line "* Copied $APP_FILE to $DEPLOY_DIR/$APP_FILE"
+         (( num_deployed_files++ ))
       elif [ -d "$APP_FILE" ]; then
          # Subdirectory so the copy will be recursive
          cp -r "$APP_FILE" "$DEPLOY_DIR"
          write_info_line "* Copied directory $APP_FILE to $DEPLOY_DIR/$APP_FILE"
+         (( num_deployed_files++ ))
+      else
+         # Not a file or directory
+         write_error_line "* Path \"$APP_FILE\" is not a file or directory. Skipping."
+         (( num_skipped_files++ ))
       fi
    else
-      write_info_line "Could not find $APP_FILE. Skipping."
+      write_info_line "* Could not find $APP_FILE. Skipping."
+      (( num_skipped_files++ ))
    fi
 done
 
@@ -349,8 +412,9 @@ else
 fi
 
 write_newline
+write_info_line "$num_deployed_files item(s) deployed. $num_skipped_files item(s) skipped."
 write_info_line "Finished file deployment operations"
-write_info_line "Finished project deployment"
 write_newline
 
+write_info_line "Finished project deployment"
 write_info_line "Done"
