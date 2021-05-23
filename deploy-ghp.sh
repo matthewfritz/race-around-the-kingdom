@@ -10,32 +10,30 @@
 # The items in the deployment directory can also be automatically pushed upstream based upon
 # supplied runtime arguments.
 #
-# Usage:
+# Display the usage instructions:
 #
 #    deploy-ghp.sh --help
 #
-# That will display the usage instructions.
-#
-#    deploy-ghp.sh
-#
-# That will simply perform all deployment steps without pushing upstream.
+# Check the set of deployment files for validity and then exit without deploying:
 #
 #    deploy-ghp.sh -c
 #    deploy-ghp.sh --check
 #
-# Those will check the set of deployment files for validity and then exit without deploying.
+# Perform all deployment steps without pushing upstream:
+#
+#    deploy-ghp.sh
+#
+# Perform all deployment steps and then push upstream with the default commit message:
 #
 #    deploy-ghp.sh -p
 #    deploy-ghp.sh --push
 #
-# Those will perform all deployment steps and then push upstream with the default commit message.
+# Perform all deployment steps and then push upstream with a custom commit message:
 #
 #    deploy-ghp.sh -p -m "Commit message"
 #    deploy-ghp.sh -p --message "Commit message"
 #    deploy-ghp.sh --push -m "Commit message"
 #    deploy-ghp.sh --push --message "Commit message"
-#
-# Those will perform all deployment steps and then push upstream with a custom commit message.
 #
 # The default deployment configuration options can be overridden at runtime using an
 # optional configuration file named "deploy-ghp-config.conf". If that file exists, the
@@ -151,32 +149,30 @@ show_usage()
    echo "The items in the deployment directory can also be automatically pushed upstream based upon"
    echo "supplied runtime arguments."
    echo
-   echo "Usage:"
+   echo "Display the usage instructions:"
    echo
    echo "   $SCRIPT_FILENAME --help"
    echo
-   echo "That will display the usage instructions."
-   echo
-   echo "   $SCRIPT_FILENAME"
-   echo
-   echo "That will simply perform all steps without pushing upstream."
+   echo "Check the set of deployment files for validity and then exit without deploying:"
    echo
    echo "   $SCRIPT_FILENAME -c"
    echo "   $SCRIPT_FILENAME --check"
    echo
-   echo "Those will check the set of deployment files for validity and then exit without deploying."
+   echo "Perform all deployment steps without pushing upstream:"
+   echo
+   echo "   $SCRIPT_FILENAME"
+   echo
+   echo "Perform all deployment steps and then push upstream with the default commit message:"
    echo
    echo "   $SCRIPT_FILENAME -p"
    echo "   $SCRIPT_FILENAME --push"
    echo
-   echo "Those will perform all steps and then push upstream with the default commit message."
+   echo "Perform all deployment steps and then push upstream with the default commit message:"
    echo
    echo "   $SCRIPT_FILENAME -p -m \"Commit message\""
    echo "   $SCRIPT_FILENAME -p --message \"Commit message\""
    echo "   $SCRIPT_FILENAME --push -m \"Commit message\""
    echo "   $SCRIPT_FILENAME --push --message \"Commit message\""
-   echo
-   echo "Those will perform all steps and then push upstream with a custom commit message."
    echo
    echo "The default deployment configuration options can be overridden at runtime using an"
    echo "optional configuration file named \"$DEPLOY_CONFIG_PATH\". If that file exists, the"
