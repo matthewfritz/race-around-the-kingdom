@@ -120,8 +120,8 @@ check_deployment_files()
          if [ -f "$dep_file" ] || [ -d "$dep_file" ]; then
             (( dep_file_count++ ))
          else
-            # Not a file or directory
-            write_error_line "* Deployment file entry \"$dep_file\" is not a file or directory. Skipping."
+            # Not a regular file or directory
+            write_error_line "* Deployment file entry \"$dep_file\" is not a regular file or directory. Skipping."
             (( skip_file_count++ ))
          fi
       else
@@ -373,7 +373,7 @@ for APP_FILE in "${APPLICATION_FILES[@]}"
 do
    if [ -e "$APP_FILE" ]; then
       if [ -f "$APP_FILE" ]; then
-         # Single file copy
+         # Single regular file copy
          cp "$APP_FILE" "$DEPLOY_DIR/$APP_FILE"
          write_info_line "* Copied $APP_FILE to $DEPLOY_DIR/$APP_FILE"
          (( num_deployed_files++ ))
@@ -384,7 +384,7 @@ do
          (( num_deployed_files++ ))
       else
          # Not a file or directory
-         write_error_line "* Path \"$APP_FILE\" is not a file or directory. Skipping."
+         write_error_line "* Path \"$APP_FILE\" is not a regular file or directory. Skipping."
          (( num_skipped_files++ ))
       fi
    else
