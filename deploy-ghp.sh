@@ -12,28 +12,28 @@
 #
 # Usage:
 #
-#    ./deploy-ghp.sh --help
+#    deploy-ghp.sh --help
 #
 # That will display the usage instructions.
 #
-#    ./deploy-ghp.sh
+#    deploy-ghp.sh
 #
 # That will simply perform all deployment steps without pushing upstream.
 #
-#    ./deploy-ghp.sh -c
-#    ./deploy-ghp.sh --check
+#    deploy-ghp.sh -c
+#    deploy-ghp.sh --check
 #
 # Those will check the set of deployment files for validity and then exit without deploying.
 #
-#    ./deploy-ghp.sh -p
-#    ./deploy-ghp.sh --push
+#    deploy-ghp.sh -p
+#    deploy-ghp.sh --push
 #
 # Those will perform all deployment steps and then push upstream with the default commit message.
 #
-#    ./deploy-ghp.sh -p -m "Commit message"
-#    ./deploy-ghp.sh -p --message "Commit message"
-#    ./deploy-ghp.sh --push -m "Commit message"
-#    ./deploy-ghp.sh --push --message "Commit message"
+#    deploy-ghp.sh -p -m "Commit message"
+#    deploy-ghp.sh -p --message "Commit message"
+#    deploy-ghp.sh --push -m "Commit message"
+#    deploy-ghp.sh --push --message "Commit message"
 #
 # Those will perform all deployment steps and then push upstream with a custom commit message.
 #
@@ -64,6 +64,9 @@
 # Potential error codes
 E_NO_DEPLOY_DIR=81
 E_NO_FILES=82
+
+# Script filename without the directory path
+SCRIPT_FILENAME=`basename $0`
 
 # Deployment directory
 # The default directory is "docs" in a project to be hosted on GitHub Pages
@@ -150,28 +153,28 @@ show_usage()
    echo
    echo "Usage:"
    echo
-   echo "   $0 --help"
+   echo "   $SCRIPT_FILENAME --help"
    echo
    echo "That will display the usage instructions."
    echo
-   echo "   $0"
+   echo "   $SCRIPT_FILENAME"
    echo
    echo "That will simply perform all steps without pushing upstream."
    echo
-   echo "  $0 -c"
-   echo "  $0 --check"
+   echo "   $SCRIPT_FILENAME -c"
+   echo "   $SCRIPT_FILENAME --check"
    echo
    echo "Those will check the set of deployment files for validity and then exit without deploying."
    echo
-   echo "   $0 -p"
-   echo "   $0 --push"
+   echo "   $SCRIPT_FILENAME -p"
+   echo "   $SCRIPT_FILENAME --push"
    echo
    echo "Those will perform all steps and then push upstream with the default commit message."
    echo
-   echo "   $0 -p -m \"Commit message\""
-   echo "   $0 -p --message \"Commit message\""
-   echo "   $0 --push -m \"Commit message\""
-   echo "   $0 --push --message \"Commit message\""
+   echo "   $SCRIPT_FILENAME -p -m \"Commit message\""
+   echo "   $SCRIPT_FILENAME -p --message \"Commit message\""
+   echo "   $SCRIPT_FILENAME --push -m \"Commit message\""
+   echo "   $SCRIPT_FILENAME --push --message \"Commit message\""
    echo
    echo "Those will perform all steps and then push upstream with a custom commit message."
    echo
